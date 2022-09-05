@@ -35,25 +35,51 @@ namespace Bussiness.Services
             get
             {
                 //入库信息和明细信息和材料信息和仓库
+                //return InContract.InMaterialLabelRepository.Query()
+                //    .InnerJoin(MaterialContract.Materials, (ins, material) => ins.MaterialCode == material.Code)
+                //    .LeftJoin(IdentityContract.Users, (ins, material, user) => ins.Operator == user.Code)
+                //    .Select((ins, material, user) => new HistoryInDto()
+                //    {
+                //        Id = ins.Id,
+                //        InCode = ins.InCode,
+                //        MaterialLabel = ins.MaterialLabel,
+                //        Quantity = ins.Quantity,
+                //        WarehouseCode = ins.WareHouseCode,
+                //        MaterialCode = ins.MaterialCode,
+                //        MaterialName = material.Name,
+                //        Unit = material.Unit,
+                //        CreatedUserName = ins.CreatedUserName,
+                //        CreatedTime = ins.CreatedTime,
+                //        InWarehouseTime = ins.ShelfTime,
+                //        Operator = ins.Operator,
+                //        OperatorName = user.Name
+                //    });
+
                 return InContract.InMaterialLabelRepository.Query()
-                    .InnerJoin(MaterialContract.Materials, (ins, material) => ins.MaterialCode == material.Code)
-                    .LeftJoin(IdentityContract.Users, (ins, material,user) => ins.Operator == user.Code)
-                    .Select((ins, material,user) => new HistoryInDto()
+                    .InnerJoin(StockContract.StockDtos, (ins, stock) => ins.MaterialLabel == stock.MaterialLabel)
+                    .LeftJoin(IdentityContract.Users, (ins, stock, user) => ins.Operator == user.Code)
+                    .Select((ins, stock, user) => new HistoryInDto()
                     {
                         Id = ins.Id,
                         InCode = ins.InCode,
                         MaterialLabel = ins.MaterialLabel,
                         Quantity = ins.Quantity,
-                        WarehouseCode= ins.WareHouseCode,
-                        MaterialCode = ins.MaterialCode,
-                        MaterialName=material.Name,
-                        Unit =material.Unit,
+                        Unit = stock.MaterialUnit,
+                        MaterialCode = stock.MaterialCode,
+                        MaterialName = stock.MaterialName,
+                        WarehouseCode = stock.WareHouseCode,
+                        WarehouseName = stock.WareHouseName,
+                        ContainerCode = stock.ContainerCode,
+                        TrayCode = stock.TrayCode,
+                        LocationCode = stock.LocationCode,
+                        BoxUrl = stock.BoxUrl,
+                        BoxName = stock.BoxName,
                         CreatedUserName = ins.CreatedUserName,
                         CreatedTime = ins.CreatedTime,
                         InWarehouseTime = ins.ShelfTime,
                         Operator = ins.Operator,
-                        OperatorName= user.Name
-                    }); 
+                        OperatorName = user.Name
+                    });
             }
         }
     }
