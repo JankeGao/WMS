@@ -111,13 +111,18 @@ namespace DF.Web.Areas.BussinessApi.Controllers
             {
                 {"Id","序号"},
                 {"InCode","入库单号"},
+                {"ContainerCode","货柜"},
+                {"TrayCode","上架托盘"},
+                {"LocationCode","上架储位"},
+                {"BoxName","载具名称"},
+                {"MaterialLabel","物料条码"},
                 {"MaterialCode","物料编码"},
                 {"Quantity","数量" },
                 {"Unit","单位" },
                 {"MaterialName","物料名称"},
                 {"WarehouseName","仓库名称" },
                 {"WarehouseCode","仓库编码" },
-                {"InWarehouseTime","添加日期" },
+                {"InWarehouseTime","入库时间" },
                 {"CreatedUserName","操作人" }
             };
 

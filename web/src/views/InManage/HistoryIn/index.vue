@@ -50,7 +50,12 @@
               <span>{{ scope.row.InCode }}</span>
             </template>
           </el-table-column>
-          <!-- <el-table-column :label="'货柜'" width="100" align="center" show-overflow-tooltip>
+          <el-table-column :label="'物料名称'" align="center" show-overflow-tooltip>
+            <template slot-scope="scope">
+              <span>{{ scope.row.MaterialName }}</span>
+            </template>
+          </el-table-column>
+          <el-table-column :label="'货柜'" width="100" align="center" show-overflow-tooltip>
             <template slot-scope="scope">
               <span>{{ scope.row.ContainerCode }}</span>
             </template>
@@ -69,8 +74,8 @@
             <template slot-scope="scope">
               <span>{{ scope.row.BoxName }}</span>
             </template>
-          </el-table-column> -->
-          <!-- <el-table-column :label="'图片'" width="80" align="center" show-overflow-tooltip>
+          </el-table-column>
+          <el-table-column :label="'图片'" width="80" align="center" show-overflow-tooltip>
             <template slot-scope="scope">
               <div class="image_box">
                 <el-image
@@ -84,11 +89,6 @@
                   </div>
                 </el-image>
               </div>
-            </template>
-          </el-table-column> -->
-          <el-table-column :label="'物料名称'" align="center" show-overflow-tooltip>
-            <template slot-scope="scope">
-              <span>{{ scope.row.MaterialName }}</span>
             </template>
           </el-table-column>
           <el-table-column :label="'物料条码'" width="145" align="center" show-overflow-tooltip>
@@ -117,11 +117,11 @@
               <span>{{ scope.row.WarehouseCode }}</span>
             </template>
           </el-table-column>
-          <!-- <el-table-column :label="'仓库名称'" align="center" width="110" show-overflow-tooltip>
+          <el-table-column :label="'仓库名称'" align="center" width="110" show-overflow-tooltip>
             <template slot-scope="scope">
               <span>{{ scope.row.WarehouseName }}</span>
             </template>
-          </el-table-column> -->
+          </el-table-column>
           <el-table-column :label="'入库时间'" align="center" width="145" show-overflow-tooltip>
             <template slot-scope="scope">
               <span>{{ scope.row.InWarehouseTime }}</span>

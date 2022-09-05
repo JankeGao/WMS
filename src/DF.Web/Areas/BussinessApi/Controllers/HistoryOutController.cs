@@ -120,13 +120,18 @@ namespace DF.Web.Areas.BussinessApi.Controllers
             {
                 {"Id","序号"},              
                 {"OutCode","出库单号"},
+                {"ContainerCode","货柜"},
+                {"TrayCode","上架托盘"},
+                {"LocationCode","上架储位"},
+                {"BoxName","载具名称"},
+                {"MaterialLabel","物料条码"},
                 {"MaterialCode","物料编码"},
                 {"Quantity","数量" },
                 {"MaterialUnit","单位" },
                 {"MaterialName","物料名称"},
                 {"WareHouseName","仓库名称" },
                 {"WareHouseCode","仓库编码" },
-                {"CreatedTime","出库日期" },
+                {"CreatedTime","出库时间" },
                 {"CreatedUserName","操作人" }
             };
 

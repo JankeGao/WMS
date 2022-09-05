@@ -293,39 +293,39 @@
                   :key="item.Code"
                   :span="8"
                   style="margin-bottom: 20px;"
-                >
-                  <el-card :body-style="{padding:'5px'}" align="middle" shadow="hover">
-                    <div slot="header" class="clearfix">
-                      <span>当前存放物料</span>
-                    </div>
-                    <!-- <el-image
-                      :src="BaseUrl +item.PictureUrl"
-                      fit="contain"
-                      style="width: 300px; height: 200px"
-                    >
-                      <div slot="error" class="image-slot">
-                        <i class="el-icon-picture-outline" />
+                  >
+                  <div id="printf" ref="print">
+                    <el-card :body-style="{padding:'5px'}" align="middle" shadow="hover">
+                      <div slot="header" class="clearfix">
+                        <span>当前存放物料</span>
                       </div>
-                    </el-image>-->
-                    <img
-                      :src="BaseUrl +item.PictureUrl"
-                      fit="contain"
-                      style="width: 300px; height: 200px"
-                    />
-                    <div style="padding:10px">
+                      <el-image
+                        :src="BaseUrl +item.PictureUrl"
+                        fit="contain"
+                        style="width: 300px; height: 200px"
+                        >
+                        <div slot="error" class="image-slot">
+                          <i class="el-icon-picture-outline" />
+                        </div>
+                      </el-image>
                       <div style="padding:10px">
-                        <span>{{ item.MaterialCode }}-{{ item.MaterialName }}</span>
+                        <div style="padding:10px">
+                          <span>{{ item.MaterialCode }}-{{ item.MaterialName }}</span>
+                        </div>
+                        <div style="padding:5px">
+                          <span>当前存放数量：</span>
+                          <span>{{ item.Quantity }}</span>
+                        </div>
+                        <div style="padding:10px">
+                          <span>最多存放数量：</span>
+                          <span>{{ item.BoxMaxCount }}</span>
+                        </div>
                       </div>
-                      <div style="padding:5px">
-                        <span>当前存放数量：</span>
-                        <span>{{ item.Quantity }}</span>
-                      </div>
-                      <div style="padding:10px">
-                        <span>最多存放数量：</span>
-                        <span>{{ item.BoxMaxCount }}</span>
-                      </div>
-                    </div>
-                  </el-card>
+                    </el-card>
+                  </div>
+                  <div align="center">
+                    <el-button v-print="'#printf'" style="margin:0px;" @click="printMessage">打印</el-button>
+                  </div>
                 </el-col>
               </el-row>
             </div>
@@ -769,6 +769,9 @@ export default {
           })
         }
       })
+    },
+    printMessage() {
+      this.$print(this.$refs.print)
     }
   }
 

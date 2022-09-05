@@ -349,6 +349,13 @@
                   style="width: 400px; height: 300px;object-fit:cover; display: block;"
                   fit="fit"
                 >
+                <div style="padding: 10px;">
+                    <div>
+                      <span style="float:right">
+                        <el-button type="text" @click="handleRemove()"><i class="el-icon-delete" /></el-button>
+                      </span>
+                    </div>
+                  </div>
                 <el-upload
                   :show-file-list="false"
                   :on-success="uploadingPicture"
@@ -1298,6 +1305,12 @@ export default {
         this.$message({
         })
       }
+    },
+    //删除图片
+    handleRemove() {
+      this.Material.PictureUrl = null
+      this.materailsrc = null
+      this.Material.FileID = null
     },
     // 添加编辑时选择图片后不确认添加或修改
     creatCancel() {
