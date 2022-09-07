@@ -27,8 +27,6 @@ namespace Bussiness.Services
 
         public IIdentityContract IdentityContract { get; set; }
 
-        public IMaterialContract MaterialContract { set; get; }
-
         public IQuery<HistoryInDto> HistoryInDtos
         {
             

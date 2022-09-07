@@ -231,10 +231,10 @@ namespace wms.Client.ViewModel
 
                     this.Report = "加载客户端信息 . . .";
 
-                    FaceInfoViewModel faceInfoViewModel = new FaceInfoViewModel();
-                    faceInfoViewModel.DeviceLogin();
-                    faceInfoViewModel.SendInfo();
-                    faceInfoViewModel.btn_SetAlarm_Click();
+                    //FaceInfoViewModel faceInfoViewModel = new FaceInfoViewModel();
+                    //faceInfoViewModel.DeviceLogin();
+                    //faceInfoViewModel.SendInfo();
+                    //faceInfoViewModel.btn_SetAlarm_Click();
                     var dialog = ServiceProvider.Instance.Get<IModelDialog>("MainViewDlg");
                     dialog.BindDefaultViewModel();
                     Messenger.Default.Send(string.Empty, "ApplicationHiding");

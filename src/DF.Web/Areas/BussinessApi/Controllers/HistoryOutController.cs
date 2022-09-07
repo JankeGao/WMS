@@ -38,7 +38,7 @@ namespace DF.Web.Areas.BussinessApi.Controllers
         /// </summary>
         public Bussiness.Contracts.IHistoryOutContract HistoryOutContract { set; get; }
 
-        public Bussiness.Contracts.IOutContract OutContract { set; get; }
+        //public Bussiness.Contracts.IOutContract OutContract { set; get; }
 
         /// <summary>
         /// 分页数据

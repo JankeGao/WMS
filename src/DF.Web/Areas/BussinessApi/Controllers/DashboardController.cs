@@ -152,19 +152,19 @@ namespace DF.Web.Areas.BussinessApi.Controllers
                 .Select(a => new
                 {
                   a.MaterialCode,
-                  a.MaterialName,
+                  //a.MaterialName,
                   a.Quantity,
                 });
             var codeList = query
-                .GroupBy(p => p.MaterialCode)
-                .Select(a => new {  a.MaterialCode, a.MaterialName})
+                .GroupBy(p => p.MaterialCode )
+                .Select(a => new { a.MaterialCode })
                 .ToList();
             var result = new List<TopSales>();
             foreach (var codeItem in codeList)
             {
                 var item = new TopSales
                 {
-                    Name = codeItem.MaterialName,
+                    Name = codeItem.MaterialCode,
                     Value = query.Where(a => a.MaterialCode == codeItem.MaterialCode).Sum(a => a.Quantity)
                 };
                 result.Add(item);
