@@ -13,7 +13,7 @@
              xmlns:service="clr-namespace:wms.Client.Service"
              xmlns:controls="clr-namespace:SearchableTextBox;assembly=SearchableTextBox"
              mc:Ignorable="d"
-             d:DesignHeight="450" d:DesignWidth="800" Background="#D7DF01">
+             d:DesignHeight="450" d:DesignWidth="800" Background="LightSkyBlue">
     <UserControl.Resources>
         <ResourceDictionary>
             <service:GlobalData x:Key="globalData"/>
@@ -76,7 +76,7 @@
                                    IsShowSearchIcon="False"
                                    SearchItemsSource="{Binding SearchItemsSourceCollection}"
                                    SearchText="{Binding Path=SearchBarcode,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                
-                                   SearchTips="请输入物料号"
+                                   SearchTips="请输入物料编码或物料名称"
                                    FontSize="16"
                                                      Margin="10"  
                                    CanShowClearButton="True"
@@ -610,7 +610,7 @@
                 </StackPanel>
                <!--<WrapPanel Grid.Row="1" >-->
                 <!--Background="{StaticResource DefaultBackGround}"-->
-                <DataGrid Grid.Row="1" Background="#D7DF01" Height="380"
+                <DataGrid Grid.Row="1" Background="LightSkyBlue" Height="380"
                           CanUserSortColumns="True"  
                   CanUserAddRows="False" AutoGenerateColumns="False" ItemsSource="{Binding InTaskMaterial}"
                       IsReadOnly="True"  >

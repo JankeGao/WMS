@@ -8,10 +8,10 @@ namespace wms.Client.LogicCore.Enums
     /// </summary>
     public enum ModuleType
     {
-        [Description("入库管理", "ArrowDownCircle")]
+        [Description("手动管理", "ArrowDownCircle")]
         InManage,
 
-        [Description("出库管理", "ArrowUpCircle")]
+        [Description("任务管理", "ArrowUpCircle")]
         OutManage,
 
         [Description("模具管理", "Bandage")]

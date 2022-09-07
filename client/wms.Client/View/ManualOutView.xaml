@@ -392,7 +392,7 @@
                                 </Style.Triggers>
                             </Style>
                         </StackPanel.Style>
-                        <TextBox
+                        <!--<TextBox
                             Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
                             VerticalAlignment="Top"
                             Margin="10"  
@@ -406,14 +406,14 @@
                             <TextBox.InputBindings>
                                 <KeyBinding Key="Enter" Command="{Binding ScanBarcodeCommand}" CommandParameter="{Binding ElementName=SearchBarcode}"/>
                             </TextBox.InputBindings>
-                        </TextBox>
+                        </TextBox>-->
 
-                        <!--<controls:SearchableTextBox x:Name="BarCode" Grid.Row="0" Width="550" Height="40"
+                        <controls:SearchableTextBox x:Name="BarCode" Grid.Row="0" Width="550" Height="40"
                                    VerticalAlignment="Top"
                                    IsShowSearchIcon="False"
                                    SearchItemsSource="{Binding SearchItemsSourceCollection}"
                                    SearchText="{Binding Path=SearchBarcode,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                
-                                   SearchTips="请输入物料号"
+                                   SearchTips="请输入物料编码或物料名称"
                                    FontSize="16"
                                                      Margin="10"  
                                    CanShowClearButton="True"
@@ -425,7 +425,7 @@
                                     <i:InvokeCommandAction Command="{Binding ScanBarcodeCommand}" ></i:InvokeCommandAction>
                                 </i:EventTrigger>
                             </i:Interaction.Triggers>
-                        </controls:SearchableTextBox>-->
+                        </controls:SearchableTextBox>
                     </StackPanel>
                     <Button
                                 Style="{StaticResource MaterialDesignRaisedLightButton}"

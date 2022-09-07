@@ -26,7 +26,7 @@
         <TabControl SelectedIndex="{Binding TabPageIndex}" SelectionChanged="TabControl_SelectionChanged">
             <!--列表页-->
             <TabItem Visibility="Collapsed">
-                <Grid   Background="#D7DF01" >
+                <Grid   Background="LightSkyBlue" >
                     <Grid.RowDefinitions>
                         <RowDefinition Height="70" />
                         <RowDefinition />
