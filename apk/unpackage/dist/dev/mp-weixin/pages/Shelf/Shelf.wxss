@@ -1,0 +1,6 @@
+
+.Scan {
+	height: 300rpx;
+	margin-bottom: 30rpx;
+}
+

@@ -98,14 +98,14 @@ namespace wms.Client.Jobs.AlarmJob
                 // 物料实体映射
                 var inTask = alarmService.GetPlcDeivceStatus(runingEntity);
 
-                // 设备在线
+                //设备在线
                 if (inTask.Result.Success)
                 {
                     ContainerEntity.Status = (int)DeviceStatusEnum.Running;
                 }
                 else
                 {
-                   // ContainerEntity.Status = (int)DeviceStatusEnum.Running;
+                    // ContainerEntity.Status = (int)DeviceStatusEnum.Running;
                     ContainerEntity.Status = (int)DeviceStatusEnum.Fault;
                 }
 

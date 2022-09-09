@@ -16,9 +16,9 @@ namespace wms.Client.UiCore.Converter
                 if (result.Equals(1))
                     return "在线";
                 else
-                    return "离线";
+                    return "在线";
             }
-            return "离线";
+            return "在线";
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

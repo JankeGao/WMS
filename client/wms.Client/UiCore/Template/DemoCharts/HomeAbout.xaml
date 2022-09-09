@@ -43,9 +43,9 @@
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <demoCharts:StackedAreaExample Margin="8" Grid.Row="0"  Grid.ColumnSpan="2" />
-                <demoCharts:DemoChart Margin="8" Grid.Row="1"  Grid.ColumnSpan="2"  />
-                <!--<demoCharts:PieChartExample Margin="8" Grid.Column="1" Grid.Row="1" />-->
+                <demoCharts:StackedAreaExample Margin="8" Grid.Row="0  "  Grid.ColumnSpan="2"/>
+                <demoCharts:DemoChart Margin="8" Grid.Row="1"  Grid.ColumnSpan="2"/>
+                <!--<demoCharts:PieChartExample Margin="8" Grid.Column="1" Grid.Row="1"/>-->
             </Grid>
             <Grid Grid.Column="1">
                 <demoCharts:MaterialCards />
