@@ -8,6 +8,7 @@ namespace Bussiness.Entitys
     [Table("TB_WMS_NumAlarm")]
     public class NumAlarm : ServiceEntityBase<int>
     {
+        
         ///<summary>
         ///物料编码
         /// </summary>

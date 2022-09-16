@@ -33,6 +33,22 @@
 
             <Grid Grid.Row="0">
                 <StackPanel Orientation="Horizontal">
+                    <StackPanel  Margin="660 0 0 0" Orientation="Horizontal" HorizontalAlignment="Right">
+                        <materialDesign:Chip
+                                    Content="{Binding Source={StaticResource globalData},Path=UserName}"
+                                    IsDeletable="True"
+                                    DeleteCommand="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Grid}}, Path=DataContext.LoginOutCommand}"
+                                    DeleteCommandParameter="{Binding Source={StaticResource globalData},Path=UserName}"
+                                    ToolTip="Just a tool tip"
+                                    DeleteToolTip="Your friendly neighbor delete button">
+                            <materialDesign:Chip.Icon>
+                                <Image
+                                            Source="{Binding Source={StaticResource globalData},Path=PictureUrl}"></Image>
+                            </materialDesign:Chip.Icon>
+                        </materialDesign:Chip>
+                    </StackPanel>
+                </StackPanel>
+                <!--<StackPanel Orientation="Horizontal">
                     <materialDesign:PackIcon Kind="Table" Width="30" Height="30"  Margin="15 30 15 0"  Foreground="#673AB7"/>
                     <StackPanel Margin="10" >
                         <TextBox
@@ -83,7 +99,7 @@
                             FontSize="24" />
 
                     </StackPanel>
-                </StackPanel>
+                </StackPanel>-->
             </Grid>
             <Grid Grid.Row="2"  >
                 <StackPanel Orientation="Horizontal">
@@ -105,8 +121,7 @@
                             Height="40"
                             Margin="10"
                             FontSize="18"
-                            materialDesign:HintAssist.HintOpacity=".26"
-                            IsEditable="True">
+                            materialDesign:HintAssist.HintOpacity=".26">
                             <i:Interaction.Triggers>
                                 <i:EventTrigger EventName="SelectionChanged">
                                     <i:InvokeCommandAction Command="{Binding BatchCodeCommand}" CommandParameter="{Binding ElementName=SelectBatchCode, Path=SelectedItem}"></i:InvokeCommandAction>
@@ -114,7 +129,7 @@
                             </i:Interaction.Triggers>
                         </ComboBox>
                     </StackPanel>
-              
+
                     <TextBlock Margin="10 22 0 0"
                                Style="{StaticResource MaterialDesignSubtitle1TextBlock}">
                         托盘层数：
@@ -136,8 +151,7 @@
                             Height="40"
                             Margin="10"
                             FontSize="18"
-                            materialDesign:HintAssist.HintOpacity=".26"
-                            IsEditable="True">
+                            materialDesign:HintAssist.HintOpacity=".26">
                             <i:Interaction.Triggers>
                                 <i:EventTrigger EventName="SelectionChanged">
                                     <i:InvokeCommandAction Command="{Binding TrayCommand}" CommandParameter="{Binding ElementName=TrayCode, Path=SelectedItem}"></i:InvokeCommandAction>
@@ -167,8 +181,7 @@
                             Height="40"
                             Margin="10"
                             FontSize="18"
-                            materialDesign:HintAssist.HintOpacity=".26"
-                            IsEditable="True">
+                            materialDesign:HintAssist.HintOpacity=".26">
                             <i:Interaction.Triggers>
                                 <i:EventTrigger EventName="SelectionChanged">
                                     <i:InvokeCommandAction Command="{Binding LocationCommand}" CommandParameter="{Binding ElementName=searchBarcode, Path=SelectedItem}"></i:InvokeCommandAction>
@@ -210,7 +223,9 @@
                             </i:Interaction.Triggers>
                         </ComboBox>
                     </StackPanel>
-                    --><!--<materialDesign:PackIcon Kind="CheckboxBlankOutline" Width="30" Height="30"  Margin="15"  Foreground="#673AB7"/>--><!--
+                    -->
+                    <!--<materialDesign:PackIcon Kind="CheckboxBlankOutline" Width="30" Height="30"  Margin="15"  Foreground="#673AB7"/>-->
+                    <!--
                     <TextBlock Margin="10 22 0 0"
                                Style="{StaticResource MaterialDesignSubtitle1TextBlock}">
                         存储位置：
@@ -245,7 +260,8 @@
                                Style="{StaticResource MaterialDesignSubtitle1TextBlock}">
                         单盒库存：
                     </TextBlock>
-                    --><!--<materialDesign:Card
+                    -->
+                    <!--<materialDesign:Card
                         materialDesign:ShadowAssist.ShadowDepth="Depth1"
                         Height="45"
                         Padding="10"
@@ -253,7 +269,8 @@
                         <TextBlock
                             Style="{StaticResource MaterialDesignHeadline6TextBlock}" Text="{Binding AviQuantity}">
                         </TextBlock>
-                    </materialDesign:Card>--><!--
+                    </materialDesign:Card>-->
+                    <!--
                     <TextBlock Margin="10 22 10 0"
                                Text="{Binding AviQuantity}"
                                Style="{StaticResource MaterialDesignSubtitle1TextBlock}">
@@ -262,7 +279,8 @@
                                Style="{StaticResource MaterialDesignSubtitle1TextBlock}">
                         全部库存：
                     </TextBlock>
-                    --><!--<materialDesign:Card
+                    -->
+                    <!--<materialDesign:Card
                         materialDesign:ShadowAssist.ShadowDepth="Depth1"
                         Height="45"
                         Padding="10"
@@ -270,7 +288,8 @@
                         <TextBlock
                             Style="{StaticResource MaterialDesignHeadline6TextBlock}" Text="{Binding AllQuantity}">
                         </TextBlock>
-                    </materialDesign:Card>--><!--
+                    </materialDesign:Card>-->
+                    <!--
                     <TextBlock Margin="10 22 10 0"
                                Text="{Binding AllQuantity}"
                                Style="{StaticResource MaterialDesignSubtitle1TextBlock}">
@@ -287,32 +306,32 @@
                     </TextBlock>-->
 
 
-                    <TextBlock Margin="20 22 0 0"
+                    <!--<TextBlock Margin="20 22 0 0"
                                Foreground="Black"
                                Style="{StaticResource MaterialDesignSubtitle1TextBlock}">
                         单品重量(g)：
-                    </TextBlock>
-                    <TextBox
+                    </TextBlock>-->
+                    <!--<TextBox
                             materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
                             materialDesign:HintAssist.FloatingScale="0.50"
                             Foreground="Red"
                             Width="60"
                             Text="{Binding UnitWeight,Mode=TwoWay}"
                             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                            FontSize="24" />
-                    <TextBlock Margin="20 22 0 0"
+                            FontSize="24" />-->
+                    <!--<TextBlock Margin="20 22 0 0"
                                Style="{StaticResource MaterialDesignSubtitle1TextBlock}">
                         重量：
-                    </TextBlock>
-                    <TextBlock Margin="10 22 10 0"
+                    </TextBlock>-->
+                    <!--<TextBlock Margin="10 22 10 0"
                                Text="{Binding InWeight}"
                                Style="{StaticResource MaterialDesignSubtitle1TextBlock}">
-                    </TextBlock>
-                    <TextBlock Margin="10 22 10 0"
+                    </TextBlock>-->
+                    <!--<TextBlock Margin="10 22 10 0"
                                Style="{StaticResource MaterialDesignSubtitle1TextBlock}">
                         Kg
-                    </TextBlock>
-                    <Button
+                    </TextBlock>-->
+                    <!--<Button
                         Style="{StaticResource MaterialDesignRaisedLightButton}"
                         Width="90"
                         Margin="5"
@@ -326,7 +345,7 @@
                                     IsChecked="{Binding IsCheckUnitWeight}"
                                     materialDesign:CheckBoxAssist.CheckBoxSize="30">
                         是否称量单品重量
-                    </CheckBox>
+                    </CheckBox>-->
                     <materialDesign:PackIcon Kind="Apps" Width="30" Height="30"  Margin="15"  Foreground="#673AB7"/>
                     <StackPanel>
                         <TextBlock Margin="10 22 10 0"
@@ -359,90 +378,7 @@
                             </ComboBox>
                         </StackPanel>-->
                     </StackPanel>
-                </StackPanel>
-            </Grid>
-            <Grid Grid.Row="1"  >
-                <StackPanel Orientation="Horizontal">
-                    <materialDesign:PackIcon Kind="BarcodeScan" Width="30" Height="30"  Margin="15"  Foreground="#673AB7"/>
-                    <!--<StackPanel>
-                        <TextBox
-                                    Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
-                                    VerticalAlignment="Top"
-                                    Margin="10"  
-                                    Width="200"
-                                    Height="40"
-                                    AcceptsReturn="False"
-                                    TextWrapping="Wrap"
-                                    VerticalScrollBarVisibility="Auto"
-                                    Text="{Binding SearchBarcode,Mode=TwoWay}"
-                                    materialDesign:HintAssist.Hint="物料条码、料号或储位号">
-                            <TextBox.InputBindings>
-                                <KeyBinding Key="Enter" Command="{Binding ScanBarcodeCommand}" CommandParameter="{Binding ElementName=SearchBarcode}"/>
-                            </TextBox.InputBindings>
-                        </TextBox>
-                    </StackPanel>-->
-
-                    <StackPanel>
-                        <StackPanel.Style>
-                            <Style>
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding Source={StaticResourceExtension globalData},Path=IsFocus}" Value="True">
-                                        <Setter Property="FocusManager.FocusedElement" Value="{Binding ElementName=BarCode}"/>
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </StackPanel.Style>
-                        <!--<TextBox
-                            Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
-                            VerticalAlignment="Top"
-                            Margin="10"  
-                            Name="BarCode"
-                            Width="400"
-                            Height="40"
-                            AcceptsReturn="False"
-                            TextWrapping="Wrap"
-                            Text="{Binding SearchBarcode, UpdateSourceTrigger=PropertyChanged}"
-                            materialDesign:HintAssist.Hint="物料条码、料号或储位号">
-                            <TextBox.InputBindings>
-                                <KeyBinding Key="Enter" Command="{Binding ScanBarcodeCommand}" CommandParameter="{Binding ElementName=SearchBarcode}"/>
-                            </TextBox.InputBindings>
-                        </TextBox>-->
-
-                        <controls:SearchableTextBox x:Name="BarCode" Grid.Row="0" Width="550" Height="40"
-                                   VerticalAlignment="Top"
-                                   IsShowSearchIcon="False"
-                                   SearchItemsSource="{Binding SearchItemsSourceCollection}"
-                                   SearchText="{Binding Path=SearchBarcode,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                
-                                   SearchTips="请输入物料编码或物料名称"
-                                   FontSize="16"
-                                                     Margin="10"  
-                                   CanShowClearButton="True"
-                                                    BorderBrush="Black" BorderThickness="1"
-                                                    CornerRadius="5"
-                            >
-                            <i:Interaction.Triggers>
-                                <i:EventTrigger EventName="ControlLoadOver">
-                                    <i:InvokeCommandAction Command="{Binding ScanBarcodeCommand}" ></i:InvokeCommandAction>
-                                </i:EventTrigger>
-                            </i:Interaction.Triggers>
-                        </controls:SearchableTextBox>
-                    </StackPanel>
-                    <Button
-                                Style="{StaticResource MaterialDesignRaisedLightButton}"
-                                Width="90"
-                                Margin="5"
-                                ToolTip="扫描物料条码或储位号" 
-                                Background="{Binding ScanColor}"
-                                Command="{Binding ScanBarcodeCommand}"
-                                CommandParameter="{Binding SearchBarcode}">
-                        扫描
-                    </Button>
-                    <CheckBox
-                                    IsChecked="{Binding AutoOprate}"
-                                    materialDesign:CheckBoxAssist.CheckBoxSize="30" >
-                        自动存入
-                    </CheckBox>
-                    <StackPanel Orientation="Horizontal">
+                    <StackPanel Orientation="Horizontal" Grid.Column="2">
                         <Image
                                     Source="{Binding LabelEntity.MaterialUrl}"
                                     Height="50"
@@ -499,6 +435,90 @@
                         </materialDesign:Chip>-->
                     </StackPanel>
                 </StackPanel>
+                
+            </Grid>
+            <Grid Grid.Row="1"  >
+                <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="BarcodeScan" Width="30" Height="30"  Margin="15"  Foreground="#673AB7"/>
+                    <!--<StackPanel>
+                        <TextBox
+                                    Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
+                                    VerticalAlignment="Top"
+                                    Margin="10"  
+                                    Width="200"
+                                    Height="40"
+                                    AcceptsReturn="False"
+                                    TextWrapping="Wrap"
+                                    VerticalScrollBarVisibility="Auto"
+                                    Text="{Binding SearchBarcode,Mode=TwoWay}"
+                                    materialDesign:HintAssist.Hint="物料条码、料号或储位号">
+                            <TextBox.InputBindings>
+                                <KeyBinding Key="Enter" Command="{Binding ScanBarcodeCommand}" CommandParameter="{Binding ElementName=SearchBarcode}"/>
+                            </TextBox.InputBindings>
+                        </TextBox>
+                    </StackPanel>-->
+
+                    <StackPanel>
+                        <StackPanel.Style>
+                            <Style>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Source={StaticResourceExtension globalData},Path=IsFocus}" Value="True">
+                                        <Setter Property="FocusManager.FocusedElement" Value="{Binding ElementName=BarCode}"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </StackPanel.Style>
+                        <!--<TextBox
+                            Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
+                            VerticalAlignment="Top"
+                            Margin="10"  
+                            Name="BarCode"
+                            Width="400"
+                            Height="40"
+                            AcceptsReturn="False"
+                            TextWrapping="Wrap"
+                            Text="{Binding SearchBarcode, UpdateSourceTrigger=PropertyChanged}"
+                            materialDesign:HintAssist.Hint="物料条码、料号或储位号">
+                            <TextBox.InputBindings>
+                                <KeyBinding Key="Enter" Command="{Binding ScanBarcodeCommand}" CommandParameter="{Binding ElementName=SearchBarcode}"/>
+                            </TextBox.InputBindings>
+                        </TextBox>-->
+
+                        <controls:SearchableTextBox x:Name="BarCode" Grid.Row="0" Width="500" Height="40"
+                                   IsShowSearchIcon="False"
+                                   SearchItemsSource="{Binding SearchItemsSourceCollection}"
+                                   SearchText="{Binding Path=SearchBarcode,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"                
+                                   SearchTips="请输入物料编码或物料名称"
+                                   FontSize="16"
+                                                     Margin="10"  
+                                   CanShowClearButton="True"
+                                                    BorderBrush="Black" BorderThickness="1"
+                                                    CornerRadius="5"
+                            >
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="ControlLoadOver">
+                                    <i:InvokeCommandAction Command="{Binding ScanBarcodeCommand}" ></i:InvokeCommandAction>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </controls:SearchableTextBox>
+                    </StackPanel>
+                    <Button
+                                Style="{StaticResource MaterialDesignRaisedLightButton}"
+                                Width="90"
+                                Margin="5"
+                                ToolTip="扫描物料条码或储位号" 
+                                Background="{Binding ScanColor}"
+                                Command="{Binding ScanBarcodeCommand}"
+                                CommandParameter="{Binding SearchBarcode}">
+                        扫描
+                    </Button>
+                    <CheckBox
+                                    IsChecked="{Binding AutoOprate}"
+                                    materialDesign:CheckBoxAssist.CheckBoxSize="30" >
+                        自动存入
+                    </CheckBox>
+                    
+                </StackPanel>
             </Grid>
             <Grid Grid.Row="3"  >
                 <StackPanel Orientation="Horizontal">
@@ -510,25 +530,14 @@
                             materialDesign:HintAssist.FloatingScale="0.50"
                             Width="100"
                             Foreground="Red"
-                            Text="{Binding OutQuantity,Mode=TwoWay}"
+                            Text="{Binding OutQuantity, Mode=TwoWay}"
                             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                            FontSize="24" />
+                            FontSize="18" />
                     </StackPanel>
                     <!-- 人员登录图标-->
-                    <StackPanel  Margin="45 0 0 0" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <StackPanel  Margin="0" Orientation="Horizontal" HorizontalAlignment="Right">
                         <!--<Border Background="#EDEDED" BorderThickness="3 0 0 0" BorderBrush="#A3A3A3" />-->
-                        <materialDesign:Chip
-                            Content="{Binding Source={StaticResource globalData},Path=UserName}"
-                            IsDeletable="True"
-                            DeleteCommand="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Grid}}, Path=DataContext.LoginOutCommand}"
-                            DeleteCommandParameter="{Binding Source={StaticResource globalData},Path=UserName}"
-                            ToolTip="Just a tool tip"
-                            DeleteToolTip="Your friendly neighbor delete button">
-                            <materialDesign:Chip.Icon>
-                                <Image
-                                    Source="{Binding Source={StaticResource globalData},Path=PictureUrl}"></Image>
-                            </materialDesign:Chip.Icon>
-                        </materialDesign:Chip>
+                        
                         <TextBlock Margin="10 33 10 0"
                                Style="{StaticResource MaterialDesignSubtitle1TextBlock}">
                         单盒库存：
@@ -582,11 +591,15 @@
                 </StackPanel>
             </Grid>
             <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="23*"/>
+                    <ColumnDefinition Width="777*"/>
+                </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="100"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <StackPanel Grid.Row="0" HorizontalAlignment="Left" Orientation="Horizontal" Width="1800">
+                <StackPanel Grid.Row="0" HorizontalAlignment="Left" Orientation="Horizontal" Width="1800" Grid.ColumnSpan="2">
                     <Border Background="#EDEDED" BorderThickness="3 0 0 0" BorderBrush="#A3A3A3" />
                     <TextBlock Margin="10 42 10 0"
                                 Style="{StaticResource MaterialDesignSubtitle1TextBlock}">
@@ -596,7 +609,7 @@
                                 materialDesign:ShadowAssist.ShadowDepth="Depth1"
                                 Height="45"
                                 Padding="10"
-                                Margin="0 0 30 0">
+                                Margin="0 0 10 0">
                         <TextBlock
                                     Style="{StaticResource MaterialDesignHeadline6TextBlock}" Text="{Binding SelectTrayCode}">
                         </TextBlock>
@@ -605,12 +618,12 @@
                                Style="{StaticResource MaterialDesignSubtitle1TextBlock}">
                         X轴
                     </TextBlock>
-                    
+
                     <materialDesign:Card
                         materialDesign:ShadowAssist.ShadowDepth="Depth1"
                         Height="45"
                         Padding="10"
-                        Margin="0 0 30 0">
+                        Margin="0 0 10 0">
                         <TextBlock
                             Style="{StaticResource MaterialDesignHeadline6TextBlock}" Text="{Binding XLight}">
                         </TextBlock>
@@ -625,7 +638,7 @@
                         materialDesign:ShadowAssist.ShadowDepth="Depth1"
                         Height="45"
                         Padding="10"
-                        Margin="0 0 30 0">
+                        Margin="0 0 10 0">
                         <TextBlock
                             Style="{StaticResource MaterialDesignHeadline6TextBlock}" Text="{Binding YLight}">
                         </TextBlock>
@@ -641,7 +654,7 @@
                         Margin="10 0 0 0"
                         Stretch="Uniform" />-->
 
-                    <Button Margin="30 0 0 0" Height="80" FontSize="14"  Style="{StaticResource MaterialDesignRaisedButton}" ToolTip="取出托盘" 
+                    <Button Margin="10 0 0 0" Height="80" FontSize="14"  Style="{StaticResource MaterialDesignRaisedButton}" ToolTip="取出托盘" 
                             CommandParameter="{Binding}"    
                             Background="{Binding FirstStepColor}"
                             Command="{Binding RunningCommand}" >
@@ -681,7 +694,7 @@
                 <DataGrid Grid.Row="1" 
                           CanUserSortColumns="True"  Background="LightSkyBlue"  Height="380"
                   CanUserAddRows="False" AutoGenerateColumns="False" ItemsSource="{Binding OutTaskMaterial}"
-                      IsReadOnly="True"  >
+                      IsReadOnly="True" Grid.ColumnSpan="2"  >
                     <DataGrid.InputBindings>
                         <MouseBinding MouseAction="LeftDoubleClick"  
                                   CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, 

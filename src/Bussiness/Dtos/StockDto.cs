@@ -102,5 +102,9 @@ namespace Bussiness.Dtos
         /// 用途
         /// </summary>
         public string Use { get; set; }
+
+        //public string LocationCodeses { get; set; }
+
+        //public string ManufactureDate { get; set; }
     }
 }

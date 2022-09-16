@@ -278,11 +278,11 @@
                         <span>{{ Box.Name }}-{{ Box.Code }}</span>
                       </div>
                       <div style="padding:5px">
-                        <span>长度(mm)：</span>
+                        <span>长度(mm):</span>
                         <span>{{ Box.BoxLength }}</span>
                       </div>
                       <div style="padding:10px">
-                        <span>宽度(mm)：</span>
+                        <span>宽度(mm):</span>
                         <span>{{ Box.BoxWidth }}</span>
                       </div>
                     </div>
@@ -294,35 +294,37 @@
                   :span="8"
                   style="margin-bottom: 20px;"
                   >
-                  <div id="printf" ref="print">
                     <el-card :body-style="{padding:'5px'}" align="middle" shadow="hover">
                       <div slot="header" class="clearfix">
                         <span>当前存放物料</span>
                       </div>
-                      <el-image
-                        :src="BaseUrl +item.PictureUrl"
-                        fit="contain"
-                        style="width: 300px; height: 200px"
-                        >
-                        <div slot="error" class="image-slot">
-                          <i class="el-icon-picture-outline" />
-                        </div>
-                      </el-image>
-                      <div style="padding:10px">
+                      <el-card :body-style="{padding:'5px'}" align="middle" shadow="hover">
+                        <div id="printf" ref="print" align="middle">
+                          <div style="padding:1px">
+                            <el-image
+                            :src="BaseUrl +item.PictureUrl"
+                            fit="contain"
+                            style="width: 300px; height: 200px"
+                            >
+                            <div slot="error" class="image-slot">
+                              <i class="el-icon-picture-outline" />
+                            </div>
+                            </el-image>
+                            <div style="padding:1px">
+                              <span>{{ item.MaterialCode }}-{{ item.MaterialName }}</span>
+                            </div>
+                          </div>
+                          <div style="padding:1px">
+                            <span>当前存放数量:</span>
+                            <span>{{ item.Quantity }}</span>
+                          </div>
+                      </div>
+                      </el-card>
                         <div style="padding:10px">
-                          <span>{{ item.MaterialCode }}-{{ item.MaterialName }}</span>
-                        </div>
-                        <div style="padding:5px">
-                          <span>当前存放数量：</span>
-                          <span>{{ item.Quantity }}</span>
-                        </div>
-                        <div style="padding:10px">
-                          <span>最多存放数量：</span>
+                          <span>最多存放数量:</span>
                           <span>{{ item.BoxMaxCount }}</span>
                         </div>
-                      </div>
                     </el-card>
-                  </div>
                   <div align="center">
                     <el-button v-print="'#printf'" style="margin:0px;" @click="printMessage">打印</el-button>
                   </div>

@@ -147,12 +147,12 @@ namespace wms.Client.ViewModel
             _ModuleManager = new ModuleManager();
             await _ModuleManager.LoadModules();
             //设置系统默认首页
-            var page = GlobalData.OpenPageCollection.FirstOrDefault(t => t.HeaderName.Equals("系统首页"));
+            var page = GlobalData.OpenPageCollection.FirstOrDefault(t => t.HeaderName.Equals("系统状态"));
             if (page == null)
             {
                 //演示Demo加载默认首页,较消耗性能。 实际开发务移除患者更新开发部件。
                 HomeAbout about = new HomeAbout();
-                GlobalData.OpenPageCollection.Add(new PageInfo() { HeaderName = "系统首页", Body = about });
+                GlobalData.OpenPageCollection.Add(new PageInfo() { HeaderName = "系统状态", Body = about });
                 GlobalData.CurrentPage = GlobalData.OpenPageCollection[GlobalData.OpenPageCollection.Count - 1];
             }
         }
@@ -205,7 +205,7 @@ namespace wms.Client.ViewModel
             try
             {
                 var tab = GlobalData.OpenPageCollection.FirstOrDefault(t => t.HeaderName.Equals(module.HeaderName));
-                if (tab.HeaderName != "系统首页") GlobalData.OpenPageCollection.Remove(tab);
+                if (tab.HeaderName != "系统状态") GlobalData.OpenPageCollection.Remove(tab);
             }
             catch (Exception ex)
             {
@@ -219,10 +219,10 @@ namespace wms.Client.ViewModel
             {
                 case MenuBehaviorType.ExitCurrentPage:
                     var page = GlobalData.OpenPageCollection.FirstOrDefault(t => t.HeaderName.Equals(pageName));
-                    if (page.HeaderName != "系统首页") GlobalData.OpenPageCollection.Remove(page);
+                    if (page.HeaderName != "系统状态") GlobalData.OpenPageCollection.Remove(page);
                     break;
                 case MenuBehaviorType.ExitAllPage:
-                    var pageList = GlobalData.OpenPageCollection.Where(t => t.HeaderName != "系统首页").ToList();
+                    var pageList = GlobalData.OpenPageCollection.Where(t => t.HeaderName != "系统状态").ToList();
                     if (pageList != null)
                     {
                         pageList.ForEach(t =>
@@ -233,7 +233,7 @@ namespace wms.Client.ViewModel
                     GlobalData.CurrentPage = GlobalData.OpenPageCollection[GlobalData.OpenPageCollection.Count - 1];
                     break;
                 case MenuBehaviorType.ExitAllExcept:
-                    var pageListExcept = GlobalData.OpenPageCollection.Where(t => t.HeaderName != pageName && t.HeaderName != "系统首页").ToList();
+                    var pageListExcept = GlobalData.OpenPageCollection.Where(t => t.HeaderName != pageName && t.HeaderName != "系统状态").ToList();
                     if (pageListExcept != null)
                     {
                         pageListExcept.ForEach(t =>
@@ -271,7 +271,7 @@ namespace wms.Client.ViewModel
         public async void ClosePage(string moduleName)
         {
             var page = GlobalData.OpenPageCollection.FirstOrDefault(t => t.HeaderName.Equals(moduleName));
-            if (page.HeaderName != "系统首页") GlobalData.OpenPageCollection.Remove(page);
+            if (page.HeaderName != "系统状态") GlobalData.OpenPageCollection.Remove(page);
             GlobalData.CurrentPage = GlobalData.OpenPageCollection[GlobalData.OpenPageCollection.Count - 1];
         }
 

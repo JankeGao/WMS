@@ -97,6 +97,7 @@ namespace Bussiness.Dtos
         /// 出库时间
         /// </summary>
         public DateTime CreatedTime { get; set; }
+       
 
     }
 }

@@ -40,6 +40,7 @@ namespace Bussiness.Services
                         Quantity = outs.Quantity,
                         MaterialLabel= outs.MaterialLabel,
                         MaterialUnit =  material.Unit,
+                        Remark2 = material.Remark2,
                         MaterialCode = material.Code,
                         MaterialName = material.Name,
                         WareHouseCode = location.WareHouseCode,

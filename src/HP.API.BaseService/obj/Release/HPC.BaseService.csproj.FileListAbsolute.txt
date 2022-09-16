@@ -227,3 +227,24 @@ D:\0 稻成科技\0 项目\1 万事嘉wms 项目\3 code\朗杰WMS\src\HP.API.Bas
 D:\0 稻成科技\0 项目\1 万事嘉wms 项目\3 code\朗杰WMS\src\HP.API.BaseService\obj\Release\HPC.BaseService.csproj.CopyComplete
 D:\0 稻成科技\0 项目\1 万事嘉wms 项目\3 code\朗杰WMS\src\HP.API.BaseService\obj\Release\HPC.BaseService.dll
 D:\0 稻成科技\0 项目\1 万事嘉wms 项目\3 code\朗杰WMS\src\HP.API.BaseService\obj\Release\HPC.BaseService.pdb
+E:\IWMS\src\HP.API.BaseService\bin\Release\HPC.BaseService.dll.config
+E:\IWMS\src\HP.API.BaseService\bin\Release\HPC.BaseService.dll
+E:\IWMS\src\HP.API.BaseService\bin\Release\HPC.BaseService.pdb
+E:\IWMS\src\HP.API.BaseService\bin\Release\Autofac.dll
+E:\IWMS\src\HP.API.BaseService\bin\Release\HP.Core.dll
+E:\IWMS\src\HP.API.BaseService\bin\Release\HP.Data.Entity.dll
+E:\IWMS\src\HP.API.BaseService\bin\Release\HP.Data.Orm.dll
+E:\IWMS\src\HP.API.BaseService\bin\Release\HP.Utility.dll
+E:\IWMS\src\HP.API.BaseService\bin\Release\HP.Web.Mvc.dll
+E:\IWMS\src\HP.API.BaseService\bin\Release\Newtonsoft.Json.dll
+E:\IWMS\src\HP.API.BaseService\bin\Release\Autofac.xml
+E:\IWMS\src\HP.API.BaseService\bin\Release\HP.Core.pdb
+E:\IWMS\src\HP.API.BaseService\bin\Release\HP.Data.Entity.pdb
+E:\IWMS\src\HP.API.BaseService\bin\Release\HP.Data.Orm.pdb
+E:\IWMS\src\HP.API.BaseService\bin\Release\HP.Web.Mvc.pdb
+E:\IWMS\src\HP.API.BaseService\bin\Release\Newtonsoft.Json.xml
+E:\IWMS\src\HP.API.BaseService\obj\Release\HPC.BaseService.csproj.AssemblyReference.cache
+E:\IWMS\src\HP.API.BaseService\obj\Release\HPC.BaseService.csproj.CoreCompileInputs.cache
+E:\IWMS\src\HP.API.BaseService\obj\Release\HPC.BaseService.csproj.CopyComplete
+E:\IWMS\src\HP.API.BaseService\obj\Release\HPC.BaseService.dll
+E:\IWMS\src\HP.API.BaseService\obj\Release\HPC.BaseService.pdb

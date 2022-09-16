@@ -35,12 +35,12 @@ namespace wms.Client
 
         public MessageBoxResult MessageBoxShow_F(string msg)
         {
-           return MessageBox.Show(msg, "提示信息", MessageBoxButton.YesNo);
+           return MessageBox.Show(msg, "提示信息", MessageBoxButton.OK);
         }
 
         public  MessageBoxResult showMessage(string message)
         {
-            return MessageBox.Show(message, "提示信息", MessageBoxButton.YesNo);
+            return MessageBox.Show(message, "提示信息", MessageBoxButton.OK);
             //this.Dispatcher.BeginInvoke(new Action(() =>
             //{
             //   return MessageBox.Show(message, "提示信息", MessageBoxButton.YesNo);

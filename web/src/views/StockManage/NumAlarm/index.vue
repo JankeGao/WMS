@@ -80,6 +80,16 @@
               <span>{{ scope.row.MaterialCode }}</span>
             </template>
           </el-table-column>
+          <el-table-column :label="'货柜'" width="100" align="center" show-overflow-tooltip>
+            <template slot-scope="scope">
+              <span>{{ scope.row.ContainerCode }}</span>
+            </template>
+          </el-table-column>
+          <el-table-column :label="'上架储位'" width="100" align="center" show-overflow-tooltip>
+            <template slot-scope="scope">
+              <span>{{ scope.row.LocationCode }}</span>
+            </template>
+          </el-table-column>
           <el-table-column :label="'物料名称'" align="center" show-overflow-tooltip>
             <template slot-scope="scope">
               <span>{{ scope.row.MaterialName }}</span>

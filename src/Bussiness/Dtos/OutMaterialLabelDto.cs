@@ -63,5 +63,7 @@ namespace Bussiness.Dtos
         /// 操作人
         /// </summary>
         public string OperatorName { get; set; }
+
+        public string Remark2 { get; set; }
     }
 }

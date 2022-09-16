@@ -65,3 +65,29 @@ D:\0 稻成科技\0 项目\1 万事嘉wms 项目\3 code\朗杰WMS\src\Bussiness\
 D:\0 稻成科技\0 项目\1 万事嘉wms 项目\3 code\朗杰WMS\src\Bussiness\obj\Release\Bussiness.dll
 D:\0 稻成科技\0 项目\1 万事嘉wms 项目\3 code\朗杰WMS\src\Bussiness\obj\Release\Bussiness.pdb
 D:\0 稻成科技\0 项目\1 万事嘉wms 项目\3 code\朗杰WMS\src\Bussiness\obj\Release\Bussiness.XmlSerializers.dll
+E:\IWMS\src\Bussiness\bin\Release\Bussiness.dll.config
+E:\IWMS\src\Bussiness\bin\Release\Bussiness.dll
+E:\IWMS\src\Bussiness\bin\Release\Bussiness.XmlSerializers.dll
+E:\IWMS\src\Bussiness\bin\Release\Bussiness.pdb
+E:\IWMS\src\Bussiness\bin\Release\Autofac.dll
+E:\IWMS\src\Bussiness\bin\Release\HP.Core.dll
+E:\IWMS\src\Bussiness\bin\Release\HP.Data.Orm.dll
+E:\IWMS\src\Bussiness\bin\Release\HP.Utility.dll
+E:\IWMS\src\Bussiness\bin\Release\HPC.BaseService.dll
+E:\IWMS\src\Bussiness\bin\Release\MySql.Data.dll
+E:\IWMS\src\Bussiness\bin\Release\Newtonsoft.Json.dll
+E:\IWMS\src\Bussiness\bin\Release\NPOI.dll
+E:\IWMS\src\Bussiness\bin\Release\NPOI.OOXML.dll
+E:\IWMS\src\Bussiness\bin\Release\NPOI.OpenXml4Net.dll
+E:\IWMS\src\Bussiness\bin\Release\NPOI.OpenXmlFormats.dll
+E:\IWMS\src\Bussiness\bin\Release\Autofac.xml
+E:\IWMS\src\Bussiness\bin\Release\HP.Core.pdb
+E:\IWMS\src\Bussiness\bin\Release\HP.Data.Orm.pdb
+E:\IWMS\src\Bussiness\bin\Release\Newtonsoft.Json.xml
+E:\IWMS\src\Bussiness\bin\Release\NPOI.xml
+E:\IWMS\src\Bussiness\obj\Release\WIN.Bussiness.csproj.AssemblyReference.cache
+E:\IWMS\src\Bussiness\obj\Release\WIN.Bussiness.csproj.CoreCompileInputs.cache
+E:\IWMS\src\Bussiness\obj\Release\WIN.Bussiness.csproj.CopyComplete
+E:\IWMS\src\Bussiness\obj\Release\Bussiness.dll
+E:\IWMS\src\Bussiness\obj\Release\Bussiness.pdb
+E:\IWMS\src\Bussiness\obj\Release\Bussiness.XmlSerializers.dll

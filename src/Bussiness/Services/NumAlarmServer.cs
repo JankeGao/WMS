@@ -16,7 +16,7 @@ namespace Bussiness.Services
         /// <summary>
         /// 库存信息
         /// </summary>
-        public IStockContract StockContract { set; get; }
+        //public IStockContract StockContract { set; get; }
         
         /// <summary>
         /// 仓库信息
@@ -28,6 +28,10 @@ namespace Bussiness.Services
         /// </summary>
         public IMaterialContract MaterialContract { set; get; }
         public IRepository<NumAlarm, int> NumAlarmRepository { set; get; }
+        /// <summary>
+        /// 仓库信息
+        /// </summary>
+        public Bussiness.Contracts.IStockContract StockContract { set; get; }
 
         public IQuery<NumAlarm> NumAlarms
         {
@@ -38,7 +42,8 @@ namespace Bussiness.Services
        
         public IQuery<NumAlarmDto> NumAlarmDtos => NumAlarms
             .InnerJoin(MaterialContract.Materials, (numAlarm,material) => numAlarm.MaterialCode == material.Code)
-            .Select((numAlarm, material) => new NumAlarmDto()
+            .LeftJoin(StockContract.StockDtos, (numAlarm, material, stock) => numAlarm.MaterialCode == stock.MaterialCode)
+            .Select((numAlarm, material, stock) => new NumAlarmDto()
             {
                 Id = numAlarm.Id,
                 MinNum = material.MinNum,
@@ -52,6 +57,8 @@ namespace Bussiness.Services
                 UpdatedTime = numAlarm.UpdatedTime,
                 UpdatedUserCode = numAlarm.UpdatedUserCode,
                 UpdatedUserName = numAlarm.UpdatedUserName,
+                ContainerCode = stock.ContainerCode,
+                LocationCode = stock.LocationCode,
             });
         
         /// <summary>

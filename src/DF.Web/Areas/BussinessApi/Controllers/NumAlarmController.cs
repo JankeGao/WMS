@@ -61,6 +61,8 @@ namespace DF.Web.Areas.BussinessApi.Controllers
                     .AndBy(p => p.MaxNum)
                     .AndBy(p => p.MinNum)
                     .AndBy(p => p.Status)
+                    .AndBy(p => p.ContainerCode)
+                    .AndBy(p => p.LocationCode)
                     .Select(a => new NumAlarmDto()
                     {
                         Status = a.Status,
@@ -68,6 +70,8 @@ namespace DF.Web.Areas.BussinessApi.Controllers
                         MaxNum = a.MaxNum,
                         MaterialCode = a.MaterialCode,
                         MaterialName = a.MaterialName,
+                        ContainerCode = a.ContainerCode,
+                        LocationCode = a.LocationCode,
                         Quantity = stockquery.Where(q => q.MaterialCode == a.MaterialCode).Sum(x => x.Quantity)
                     });
 
@@ -127,6 +131,8 @@ namespace DF.Web.Areas.BussinessApi.Controllers
                 .AndBy(p => p.MaxNum)
                 .AndBy(p => p.MinNum)
                 .AndBy(p => p.Status)
+                .AndBy(p => p.ContainerCode)
+                .AndBy(p => p.LocationCode)
                 .Select(a => new NumAlarmDto()
                 {
                     Status = a.Status,
@@ -134,6 +140,8 @@ namespace DF.Web.Areas.BussinessApi.Controllers
                     MaxNum = a.MaxNum,
                     MaterialCode = a.MaterialCode,
                     MaterialName = a.MaterialName,
+                    ContainerCode = a.ContainerCode,
+                    LocationCode = a.LocationCode,
                     Quantity = stockquery.Where(q => q.MaterialCode == a.MaterialCode).Sum(x => x.Quantity)
                 });
 
@@ -171,6 +179,8 @@ namespace DF.Web.Areas.BussinessApi.Controllers
                 {"MinNum","库存下限"},
                 {"Quantity","库存数量"},
                 {"MaterialCode","物料编码"},
+                {"ContainerCode","货柜"},
+                {"LocationCode","上架储位"},
                 {"MaterialName","物料名称" }
                 //{"WareHouseCode","仓库编码" },
                 //{"WareHouseName","仓库名称" },

@@ -119,6 +119,7 @@ namespace DF.Web.Areas.BussinessApi.Controllers
                 {"MaterialCode","物料编码"},
                 {"Quantity","数量" },
                 {"Unit","单位" },
+                {"Remark2","价格" },
                 {"MaterialName","物料名称"},
                 {"WarehouseName","仓库名称" },
                 {"WarehouseCode","仓库编码" },

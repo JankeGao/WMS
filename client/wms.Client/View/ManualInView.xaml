@@ -13,7 +13,7 @@
              xmlns:service="clr-namespace:wms.Client.Service"
              xmlns:controls="clr-namespace:SearchableTextBox;assembly=SearchableTextBox"
              mc:Ignorable="d"
-             d:DesignHeight="450" d:DesignWidth="800" Background="LightSkyBlue">
+             d:DesignHeight="450" d:DesignWidth="800" Background="BlanchedAlmond">
     <UserControl.Resources>
         <ResourceDictionary>
             <service:GlobalData x:Key="globalData"/>
@@ -35,7 +35,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="60"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
-                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="0"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <StackPanel Orientation="Horizontal" Grid.Column="0">
                     <materialDesign:PackIcon Kind="BarcodeScan" Width="30" Height="30"  Margin="15"  Foreground="#673AB7"/>
@@ -108,78 +108,27 @@
                     </CheckBox>
                 </StackPanel>
 
-                <StackPanel Orientation="Horizontal" Grid.Column="2">
-                    <Image
-                                    Source="{Binding LabelEntity.MaterialUrl}"
-                                    Height="50"
-                                    Width="70"
-                                    Stretch="Uniform">
-                        <i:Interaction.Triggers>
-                            <!--<i:EventTrigger EventName="MouseDown">
-                                    <i:InvokeCommandAction Command="{Binding MouseLeaveCommand}"></i:InvokeCommandAction>
-                                </i:EventTrigger>-->
-                            <i:EventTrigger EventName="MouseDown">
-                                <i:InvokeCommandAction Command="{Binding MouseEnterCommand}"></i:InvokeCommandAction>
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>
-                    </Image>
-                    <!--<materialDesign:Chip
-                                Content="{Binding LabelEntity.MaterialName}"
-                                Margin="5"
-                                IconBackground="{DynamicResource PrimaryHueDarkBrush}"
-                                IconForeground="{DynamicResource PrimaryHueDarkForegroundBrush}">
-                            <materialDesign:Chip.Icon>
-                                <materialDesign:PackIcon
-                                        Kind="Apps"></materialDesign:PackIcon>
-                            </materialDesign:Chip.Icon>
-                        </materialDesign:Chip>-->
-                    <!--<materialDesign:Chip
-                                Content="{Binding LabelEntity.BatchCode}"
-                                Margin="5"
-                                IconBackground="{DynamicResource PrimaryHueDarkBrush}"
-                                IconForeground="{DynamicResource PrimaryHueDarkForegroundBrush}">
-                            <materialDesign:Chip.Icon>
-                                <materialDesign:PackIcon
-                                        Kind="AlphaBCircle"></materialDesign:PackIcon>
-                            </materialDesign:Chip.Icon>
-                        </materialDesign:Chip>
-                        <materialDesign:Chip
-                                Content="{Binding LabelEntity.Quantity}"
-                                Margin="5"
-                                IconBackground="{DynamicResource PrimaryHueDarkBrush}"
-                                IconForeground="{DynamicResource PrimaryHueDarkForegroundBrush}">
-                            <materialDesign:Chip.Icon>
-                                <materialDesign:PackIcon
-                                        Kind="Numeric1Circle"></materialDesign:PackIcon>
-                            </materialDesign:Chip.Icon>
-                        </materialDesign:Chip>
-                        <materialDesign:Chip
-                                Content="{Binding LabelEntity.SupplyName}"
-                                Margin="5"
-                                IconBackground="{DynamicResource PrimaryHueDarkBrush}"
-                                IconForeground="{DynamicResource PrimaryHueDarkForegroundBrush}">
-                            <materialDesign:Chip.Icon>
-                                <materialDesign:PackIcon
-                                        Kind="AccountBox"></materialDesign:PackIcon>
-                            </materialDesign:Chip.Icon>
-                        </materialDesign:Chip>-->
-                </StackPanel>
+                
             </Grid>
             <Grid Grid.Row="0">
                 <StackPanel Orientation="Horizontal">
-                    <materialDesign:PackIcon Kind="Numeric1BoxMultipleOutline" Width="30" Height="30"  Margin="15"  Foreground="Red"/>
-                    <StackPanel Margin="10" >
-                        <TextBox
-                            materialDesign:HintAssist.Hint="输入入库数量"
-                            materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
-                            materialDesign:HintAssist.FloatingScale="0.50"
-                            Foreground="Red"
-                            Width="120"
-                            Text="{Binding InQuantity,Mode=TwoWay}"
-                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                            FontSize="24" />
+                    
+                    <StackPanel  Margin="660 0 0 0" Orientation="Horizontal" HorizontalAlignment="Right">
+                        <!--<Border Background="#EDEDED" BorderThickness="3 0 0 0" BorderBrush="#A3A3A3" />-->
+                        <materialDesign:Chip
+                            Content="{Binding Source={StaticResource globalData},Path=UserName}"
+                            IsDeletable="True"
+                            DeleteCommand="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Grid}}, Path=DataContext.LoginOutCommand}"
+                            DeleteCommandParameter="{Binding Source={StaticResource globalData},Path=UserName}"
+                            ToolTip="用户名"
+                            DeleteToolTip="Your friendly neighbor delete button">
+                            <materialDesign:Chip.Icon>
+                                <Image
+                                    Source="{Binding Source={StaticResource globalData},Path=PictureUrl}"></Image>
+                            </materialDesign:Chip.Icon>
+                        </materialDesign:Chip>
                     </StackPanel>
-                    <StackPanel Margin="10" >
+                    <!--<StackPanel Margin="10" >
                         <DatePicker
                             Width="150"
                             Height="58"
@@ -187,8 +136,8 @@
                             materialDesign:HintAssist.Hint="生产日期"
                             Text="{Binding ManufactureDate,Mode=TwoWay}"
                             Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
-                    </StackPanel>
-                    <StackPanel Margin="10" >
+                    </StackPanel>-->
+                    <!--<StackPanel Margin="10" >
                         <TextBox
                             materialDesign:HintAssist.Hint="输入批次号"
                             materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
@@ -207,10 +156,10 @@
                             Text="{Binding BillCode,Mode=TwoWay}"
                             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                             FontSize="24" />
-                    </StackPanel>
+                    </StackPanel>-->
                 </StackPanel>
             </Grid>
-            <Grid Grid.Row="2"  >
+            <Grid Grid.Row="4"  >
                 <StackPanel Orientation="Horizontal">
                     <!--<materialDesign:PackIcon Kind="AccountCog" Width="30" Height="30"  Margin="15"  Foreground="#673AB7"/>
                     <StackPanel>
@@ -239,7 +188,7 @@
                         </ComboBox>
                     </StackPanel>-->
 
-                    <materialDesign:PackIcon Kind="Purse" Width="30" Height="30"  Margin="15"  Foreground="#673AB7"/>
+                    <!--<materialDesign:PackIcon Kind="Purse" Width="30" Height="30"  Margin="15"  Foreground="#673AB7"/>
                     <StackPanel>
                         <ComboBox
                             ItemsSource="{Binding InTypeGroups}" 
@@ -264,7 +213,7 @@
                                 </i:EventTrigger>
                             </i:Interaction.Triggers>
                         </ComboBox>
-                    </StackPanel>
+                    </StackPanel>-->
 
                     <materialDesign:PackIcon Kind="Apps" Width="30" Height="30"  Margin="15"  Foreground="#673AB7"/>
                     <StackPanel>
@@ -299,35 +248,83 @@
                             </ComboBox>-->
                         </StackPanel>
                     </StackPanel>
-                    <!-- 人员登录图标-->
-                    <StackPanel  Margin="45 0 0 0" Orientation="Horizontal" HorizontalAlignment="Right">
-                        <!--<Border Background="#EDEDED" BorderThickness="3 0 0 0" BorderBrush="#A3A3A3" />-->
-                        <materialDesign:Chip
-                            Content="{Binding Source={StaticResource globalData},Path=UserName}"
-                            IsDeletable="True"
-                            DeleteCommand="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Grid}}, Path=DataContext.LoginOutCommand}"
-                            DeleteCommandParameter="{Binding Source={StaticResource globalData},Path=UserName}"
-                            ToolTip="用户名"
-                            DeleteToolTip="Your friendly neighbor delete button">
+                    <StackPanel Orientation="Horizontal" Grid.Column="2" >
+                        <Image
+                                    Source="{Binding LabelEntity.MaterialUrl}"
+                                    Height="50"
+                                    Width="70"
+                                    Stretch="Uniform">
+                            <i:Interaction.Triggers>
+                                <!--<i:EventTrigger EventName="MouseDown">
+                                    <i:InvokeCommandAction Command="{Binding MouseLeaveCommand}"></i:InvokeCommandAction>
+                                </i:EventTrigger>-->
+                                <i:EventTrigger EventName="MouseDown">
+                                    <i:InvokeCommandAction Command="{Binding MouseEnterCommand}"></i:InvokeCommandAction>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </Image>
+                        <!--<materialDesign:Chip
+                                Content="{Binding LabelEntity.MaterialName}"
+                                Margin="5"
+                                IconBackground="{DynamicResource PrimaryHueDarkBrush}"
+                                IconForeground="{DynamicResource PrimaryHueDarkForegroundBrush}">
                             <materialDesign:Chip.Icon>
-                                <Image
-                                    Source="{Binding Source={StaticResource globalData},Path=PictureUrl}"></Image>
+                                <materialDesign:PackIcon
+                                        Kind="Apps"></materialDesign:PackIcon>
+                            </materialDesign:Chip.Icon>
+                        </materialDesign:Chip>-->
+                        <!--<materialDesign:Chip
+                                Content="{Binding LabelEntity.BatchCode}"
+                                Margin="5"
+                                IconBackground="{DynamicResource PrimaryHueDarkBrush}"
+                                IconForeground="{DynamicResource PrimaryHueDarkForegroundBrush}">
+                            <materialDesign:Chip.Icon>
+                                <materialDesign:PackIcon
+                                        Kind="AlphaBCircle"></materialDesign:PackIcon>
                             </materialDesign:Chip.Icon>
                         </materialDesign:Chip>
+                        <materialDesign:Chip
+                                Content="{Binding LabelEntity.Quantity}"
+                                Margin="5"
+                                IconBackground="{DynamicResource PrimaryHueDarkBrush}"
+                                IconForeground="{DynamicResource PrimaryHueDarkForegroundBrush}">
+                            <materialDesign:Chip.Icon>
+                                <materialDesign:PackIcon
+                                        Kind="Numeric1Circle"></materialDesign:PackIcon>
+                            </materialDesign:Chip.Icon>
+                        </materialDesign:Chip>
+                        <materialDesign:Chip
+                                Content="{Binding LabelEntity.SupplyName}"
+                                Margin="5"
+                                IconBackground="{DynamicResource PrimaryHueDarkBrush}"
+                                IconForeground="{DynamicResource PrimaryHueDarkForegroundBrush}">
+                            <materialDesign:Chip.Icon>
+                                <materialDesign:PackIcon
+                                        Kind="AccountBox"></materialDesign:PackIcon>
+                            </materialDesign:Chip.Icon>
+                        </materialDesign:Chip>-->
                     </StackPanel>
-                    <TextBlock Margin="10 22 10 0"
-                               Text="存在多个可存放的料盒，可在储位处下拉切换"
-                               Foreground="Red"
-                               Visibility="{Binding IsMoreThanTwo}">
-                    </TextBlock>
+                    <!-- 人员登录图标-->
+                    
+                    
                     <!--<StackPanel  Margin="45 0 0 0" Orientation="Horizontal" HorizontalAlignment="Right">
           
                     </StackPanel>-->
                 </StackPanel>
             </Grid>
-            <Grid Grid.Row="3"  >
+            <Grid Grid.Row="2"  >
                 <StackPanel Orientation="Horizontal">
                     <!--<materialDesign:PackIcon Kind="TrayFull" Width="30" Height="30"  Margin="15"  Foreground="#673AB7"/>-->
+                    <materialDesign:PackIcon Kind="AlphaBCircle" Width="30" Height="30"  Margin="15"  Foreground="#673AB7"/>
+                    <StackPanel Margin="0" >
+                        <TextBox
+                            materialDesign:HintAssist.Hint="输入批次号"
+                            materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                            materialDesign:HintAssist.FloatingScale="0.50"
+                            FontSize="18"
+                            Text="{Binding BatchCode,Mode=TwoWay}"
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    </StackPanel>
                     <TextBlock Margin="20 22 0 0"
                                Style="{StaticResource MaterialDesignSubtitle1TextBlock}">
                         托盘层数：
@@ -436,16 +433,28 @@
                         Command="{Binding WeightCheckCommand}">
                         重量核验
                     </Button>-->
-                    <CheckBox
+                    <!--<CheckBox
                                     IsChecked="{Binding IsCheckUnitWeight}"
                                     materialDesign:CheckBoxAssist.CheckBoxSize="30" Checked="CheckBox_Checked">
                         是否称量单品重量
-                    </CheckBox>
+                    </CheckBox>-->
                 </StackPanel>
    
             </Grid>
-            <Grid Grid.Row="4">
+            <Grid Grid.Row="3">
                 <StackPanel Orientation="Horizontal">
+                    <materialDesign:PackIcon Kind="Numeric1BoxMultipleOutline" Width="30" Height="30"  Margin="15"  Foreground="Red"/>
+                    <StackPanel Margin="0" >
+                        <TextBox
+                            materialDesign:HintAssist.Hint="输入入库数量"
+                            materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                            materialDesign:HintAssist.FloatingScale="0.50"
+                            Foreground="Red"
+                            Width="120"
+                            Text="{Binding InQuantity,Mode=TwoWay}"
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                            FontSize="18" />
+                    </StackPanel>
                     <TextBlock Margin="20 22 0 0"
                                Style="{StaticResource MaterialDesignSubtitle1TextBlock}">
                         剩余存放：
@@ -472,12 +481,17 @@
                                Foreground="Red"
                                Style="{StaticResource MaterialDesignSubtitle1TextBlock}">
                     </TextBlock>
-                    <TextBlock Margin="20 22 0 0"
+                    <TextBlock Margin="10 22 10 0"
+                               Text="存在多个可存放的料盒，可在储位处下拉切换"
+                               Foreground="Red"
+                               Visibility="{Binding IsMoreThanTwo}">
+                    </TextBlock>
+                    <!--<TextBlock Margin="20 22 0 0"
                                Foreground="Black"
                                Style="{StaticResource MaterialDesignSubtitle1TextBlock}">
                         单品重量(g)：
-                    </TextBlock>
-                    <TextBox
+                    </TextBlock>-->
+                    <!--<TextBox
                             materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
                             materialDesign:HintAssist.FloatingScale="0.50"
                             Foreground="Red"
@@ -506,7 +520,7 @@
                         Background="{Binding WeightCheckColor}"
                         Command="{Binding WeightCheckCommand}">
                         重量核验
-                    </Button>
+                    </Button>-->
           
                 </StackPanel>
             </Grid>
@@ -526,7 +540,7 @@
                                 materialDesign:ShadowAssist.ShadowDepth="Depth1"
                                 Height="45"
                                 Padding="10"
-                                Margin="0 0 30 0">
+                                Margin="0 0 10 0">
                         <TextBlock
                                     Style="{StaticResource MaterialDesignHeadline6TextBlock}" Text="{Binding SelectTrayCode}">
                         </TextBlock>
@@ -539,7 +553,7 @@
                         materialDesign:ShadowAssist.ShadowDepth="Depth1"
                         Height="45"
                         Padding="10"
-                        Margin="0 0 30 0">
+                        Margin="0 0 10 0">
                         <TextBlock
                             Style="{StaticResource MaterialDesignHeadline6TextBlock}" Text="{Binding XLight}">
                         </TextBlock>
@@ -552,7 +566,7 @@
                         materialDesign:ShadowAssist.ShadowDepth="Depth1"
                         Height="45"
                         Padding="10"
-                        Margin="0 0 30 0">
+                        Margin="0 0 10 0">
                         <TextBlock
                             Style="{StaticResource MaterialDesignHeadline6TextBlock}" Text="{Binding YLight}">
                         </TextBlock>
@@ -568,7 +582,7 @@
                         Margin="10 0 0 0"
                         Stretch="Uniform" />-->
 
-                    <Button Margin="30 0 0 0" Height="80" FontSize="14" Style="{StaticResource MaterialDesignRaisedButton}" ToolTip="取出托盘" 
+                    <Button Margin="10 0 0 0" Height="80" FontSize="14" Style="{StaticResource MaterialDesignRaisedButton}" ToolTip="取出托盘" 
                             Background="{Binding FirstStepColor}"
                             CommandParameter="{Binding}"                          
                             Command="{Binding RunningCommand}" >
@@ -610,7 +624,7 @@
                 </StackPanel>
                <!--<WrapPanel Grid.Row="1" >-->
                 <!--Background="{StaticResource DefaultBackGround}"-->
-                <DataGrid Grid.Row="1" Background="LightSkyBlue" Height="380"
+                <DataGrid Grid.Row="1" Background="BlanchedAlmond" Height="380"
                           CanUserSortColumns="True"  
                   CanUserAddRows="False" AutoGenerateColumns="False" ItemsSource="{Binding InTaskMaterial}"
                       IsReadOnly="True"  >

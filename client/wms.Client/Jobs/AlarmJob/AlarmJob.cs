@@ -170,7 +170,7 @@ namespace wms.Client.Jobs.AlarmJob
                         //  await Msg.Question("设备发生报警:" + message + ",请复位！") == true
 
            
-                        if (this.ShowMessage("设备发生报警:" + message + ",请复位！")==MessageBoxResult.Yes)
+                        if (this.ShowMessage("设备发生报警:" + message + ",请复位！")==MessageBoxResult.OK)
                         {
                             try
                             {
@@ -270,7 +270,7 @@ namespace wms.Client.Jobs.AlarmJob
         }
         public MessageBoxResult MessageBoxShow_F(string msg)
         {
-            return MessageBox.Show(msg, "提示信息", MessageBoxButton.YesNo);
+            return MessageBox.Show(msg, "提示信息", MessageBoxButton.OK);
         }
 
         /// <summary>

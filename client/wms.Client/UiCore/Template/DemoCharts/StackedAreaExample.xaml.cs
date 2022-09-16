@@ -65,12 +65,12 @@ namespace wms.Client.UiCore.Template.DemoCharts
         /// <summary>
         /// 获取本机货柜任务
         /// </summary>
-        public async void GetMyPageData()
+        public void GetMyPageData()
         {
             string step = "0";
             try
             {
- 
+
                 if (GlobalData.IsOnLine)
                 {
                     var query = WareHouseContract.Containers.FirstOrDefault(a => a.Code == ContainerCode);
@@ -98,7 +98,7 @@ namespace wms.Client.UiCore.Template.DemoCharts
             catch (Exception ex)
             {
                 GlobalData.IsOnLine = false;
-                Msg.Error("step:"+step+"---StackedAreaExampleError:" +ex.StackTrace +"--------"+ex.InnerException.Message+"-------"+ex.Source+"-------"+ex.InnerException.StackTrace);
+                Msg.Error("step:" + step + "---StackedAreaExampleError:" + ex.StackTrace + "--------" + ex.InnerException.Message + "-------" + ex.Source + "-------" + ex.InnerException.StackTrace);
             }
         }
 
@@ -132,7 +132,7 @@ namespace wms.Client.UiCore.Template.DemoCharts
         /// <summary>
         /// 获取本机货柜任务
         /// </summary>
-        public async void Rest_Alarm(object sender, RoutedEventArgs e)
+        public void Rest_Alarm(object sender, RoutedEventArgs e)
         {
             try
             {
@@ -181,7 +181,7 @@ namespace wms.Client.UiCore.Template.DemoCharts
                 Msg.Error(ex.Message);
             }
         }
-        
+
 
         /// <summary>
         /// 客户端货柜编码

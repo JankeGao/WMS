@@ -19,6 +19,7 @@ namespace Bussiness.Services
 {
     public class StockServer : Contracts.IStockContract
     {
+
         public IRepository<InactiveStockVM, int> InactiveStockVMRepository { get; set; }
 
         public IQuery<Entitys.InactiveStockVM> InactiveStockVMs
@@ -75,7 +76,6 @@ namespace Bussiness.Services
 
         public IWareHouseContract WareHouseContract { set; get; }
 
-
         public IQuery<Entitys.Stock> Stocks {
             get
             {
@@ -92,57 +92,57 @@ namespace Bussiness.Services
                     .InnerJoin(WareHouseContract.LocationVMs, (stocks, materials, warehouses,location) => stocks.LocationCode == location.Code)
                     .LeftJoin(SupplyContract.Supplys, (stocks, materials, warehouses, location,supply) => stocks.SupplierCode == supply.Code)
                     .Select((stocks, materials, warehouses, location, supply) => new Dtos.StockDto()
-                {
-                    Id = stocks.Id,
-                    MaterialLabel = stocks.MaterialLabel,
-                    LocationCode = stocks.LocationCode,
-                    MaterialStatus = stocks.MaterialStatus,
-                    StockStatus = stocks.StockStatus,
-                    ContainerCode= stocks.ContainerCode,
-                    ShelfTime= stocks.ShelfTime,
-                    TrayId =stocks.TrayId,
-                    BillCode = stocks.BillCode,
-                    InCode = stocks.InCode,
-                    MaterialCode = stocks.MaterialCode,
-                    Quantity = stocks.Quantity,
-                    ManufactureDate = stocks.ManufactureDate,
-                    BatchCode = stocks.BatchCode,
-                    SupplierCode = stocks.SupplierCode,
-                    SuggestLocationCode = stocks.SuggestLocationCode,
-                    InDate = stocks.InDate,
-                    IsLocked = stocks.IsLocked,
-                    SaleBillNo = stocks.SaleBillNo,
-                    SaleBillItemNo = stocks.SaleBillItemNo,
-                    ManufactureBillNo = stocks.ManufactureBillNo,
-                    CustomCode = stocks.CustomCode,
-                    CustomName = stocks.CustomName,
-                    WareHouseCode = stocks.WareHouseCode,
-                    MaterialName = materials.Name,
-                    MaterialType = materials.MaterialType,
-                    CreatedTime = stocks.CreatedTime,
-                    CreatedUserCode = stocks.CreatedUserCode,
-                    CreatedUserName = stocks.CreatedUserName,
-                    UpdatedTime = stocks.UpdatedTime,
-                    UpdatedUserCode = stocks.UpdatedUserCode,
-                    UpdatedUserName = stocks.UpdatedUserName,
-                    WareHouseName = warehouses.Name,
-                    AreaCode = stocks.AreaCode,
-                    MaterialUnit = materials.Unit,
-                    LockedQuantity = stocks.LockedQuantity,
-                    IsCheckLocked =stocks.IsCheckLocked,
-                    ValidityPeriod= materials.ValidityPeriod,
-                    SupplierName=supply.Name,
-                    LayoutId=location.LayoutId,
-                    PictureUrl= materials.PictureUrl,
-                    BoxCode= location.BoxCode,
-                    BoxName = location.BoxName, 
-                    TrayCode = location.TrayCode,
-                    BoxUrl=location.BoxUrl,
-                    AgeingPeriod= materials.AgeingPeriod,
-                    XLight = location.XLight,
-                    YLight = location.YLight,
-                    Price = materials.Remark2,
-                    Use = materials.Remark3,
+                    {
+                        Id = stocks.Id,
+                        MaterialLabel = stocks.MaterialLabel,
+                        LocationCode = stocks.LocationCode,
+                        MaterialStatus = stocks.MaterialStatus,
+                        StockStatus = stocks.StockStatus,
+                        ContainerCode= stocks.ContainerCode,
+                        ShelfTime= stocks.ShelfTime,
+                        TrayId =stocks.TrayId,
+                        BillCode = stocks.BillCode,
+                        InCode = stocks.InCode,
+                        MaterialCode = stocks.MaterialCode,
+                        Quantity = stocks.Quantity,
+                        ManufactureDate = stocks.ManufactureDate,
+                        BatchCode = stocks.BatchCode,
+                        SupplierCode = stocks.SupplierCode,
+                        SuggestLocationCode = stocks.SuggestLocationCode,
+                        InDate = stocks.InDate,
+                        IsLocked = stocks.IsLocked,
+                        SaleBillNo = stocks.SaleBillNo,
+                        SaleBillItemNo = stocks.SaleBillItemNo,
+                        ManufactureBillNo = stocks.ManufactureBillNo,
+                        CustomCode = stocks.CustomCode,
+                        CustomName = stocks.CustomName,
+                        WareHouseCode = stocks.WareHouseCode,
+                        MaterialName = materials.Name,
+                        MaterialType = materials.MaterialType,
+                        CreatedTime = stocks.CreatedTime,
+                        CreatedUserCode = stocks.CreatedUserCode,
+                        CreatedUserName = stocks.CreatedUserName,
+                        UpdatedTime = stocks.UpdatedTime,
+                        UpdatedUserCode = stocks.UpdatedUserCode,
+                        UpdatedUserName = stocks.UpdatedUserName,
+                        WareHouseName = warehouses.Name,
+                        AreaCode = stocks.AreaCode,
+                        MaterialUnit = materials.Unit,
+                        LockedQuantity = stocks.LockedQuantity,
+                        IsCheckLocked =stocks.IsCheckLocked,
+                        ValidityPeriod= materials.ValidityPeriod,
+                        SupplierName=supply.Name,
+                        LayoutId=location.LayoutId,
+                        PictureUrl= materials.PictureUrl,
+                        BoxCode= location.BoxCode,
+                        BoxName = location.BoxName, 
+                        TrayCode = location.TrayCode,
+                        BoxUrl=location.BoxUrl,
+                        AgeingPeriod= materials.AgeingPeriod,
+                        XLight = location.XLight,
+                        YLight = location.YLight,
+                        Price = materials.Remark2,
+                        Use = materials.Remark3,
                     });
             }
         }

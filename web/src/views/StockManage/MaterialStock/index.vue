@@ -90,12 +90,12 @@
                 <span>{{ scope.row.WareHouseCode }}</span>
               </template>
             </el-table-column>
-            <el-table-column :label="'仓库名称'" width="150" align="center" show-overflow-tooltip>
+            <el-table-column :label="'仓库名称'" width="90" align="center" show-overflow-tooltip>
               <template slot-scope="scope">
                 <span>{{ scope.row.WareHouseName }}</span>
               </template>
             </el-table-column>
-            <el-table-column :label="'货柜编码'" width="150" align="center" show-overflow-tooltip>
+            <el-table-column :label="'货柜编码'" width="90" align="center" show-overflow-tooltip>
               <template slot-scope="scope">
                 <span>{{ scope.row.ContainerCode }}</span>
               </template>
@@ -105,7 +105,7 @@
                 <span>{{ scope.row.MaterialCode }}</span>
               </template>
             </el-table-column>
-            <el-table-column :label="'物料名称'" align="center" show-overflow-tooltip>
+            <el-table-column :label="'物料名称'" width="150" align="center" show-overflow-tooltip>
               <template slot-scope="scope">
                 <span>{{ scope.row.MaterialName }}</span>
               </template>
@@ -115,9 +115,14 @@
                 <span>{{ scope.row.Price }}</span>
               </template>
             </el-table-column>
-            <el-table-column :label="'用途'" width="150" align="center" show-overflow-tooltip>
+            <el-table-column :label="'用途'" width="80" align="center" show-overflow-tooltip>
               <template slot-scope="scope">
                 <span>{{ scope.row.Use }}</span>
+              </template>
+            </el-table-column>
+            <el-table-column :label="'上架储位'" width="100" align="center" show-overflow-tooltip>
+              <template slot-scope="scope">
+                <span>{{ scope.row.LocationCode }}</span>
               </template>
             </el-table-column>
             <el-table-column :label="'总数量'" width="80" align="center" show-overflow-tooltip>
@@ -140,6 +145,12 @@
                 <span>{{ scope.row.MaterialUnit }}</span>
               </template>
             </el-table-column>
+            <el-table-column :label="'入库时间'" width="100" align="center" show-overflow-tooltip>
+              <template slot-scope="scope">
+                <span>{{ scope.row.ShelfTime }}</span>
+              </template>
+            </el-table-column>
+
             <!-- <el-table-column :label="'操作'" align="center" width="80" class-name="small-padding fixed-width" fixed="right">
             <template slot-scope="scope">
               <el-button size="mini" type="primary" @click="handlePtl(scope.row)">指引</el-button>

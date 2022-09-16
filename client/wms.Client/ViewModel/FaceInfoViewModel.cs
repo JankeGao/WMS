@@ -59,7 +59,7 @@ namespace wms.Client.ViewModel
             LoginOutCommand = new RelayCommand<string>(LoginOut);
             m_bInitSDK = HCNetSDK.NET_DVR_Init();
             this.ReadConfigInfo();
-       //     this.ShowLogin();
+            //this.ShowLogin();
             //设置报警回调函数
             m_falarmData = new HCNetSDK.MSGCallBack(MsgCallback);
             IntPtr intPtr = Marshal.GetHINSTANCE(System.Reflection.Assembly.GetExecutingAssembly().GetModules()[0]);

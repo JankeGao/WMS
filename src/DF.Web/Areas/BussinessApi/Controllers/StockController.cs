@@ -138,8 +138,11 @@ namespace DF.Web.Areas.BussinessApi.Controllers
                     .AndBy(p => p.WareHouseCode)
                     .AndBy(p => p.WareHouseName)
                     .AndBy(p => p.MaterialUnit)
-                    .AndBy(p=>p.ContainerCode).AndBy(p=>p.Price).AndBy(p=>p.Use)
-                    
+                    .AndBy(p=>p.ContainerCode)
+                    .AndBy(p=>p.Price)
+                    .AndBy(p=>p.Use)
+                    .AndBy(p => p.LocationCode)
+                    .AndBy(p => p.ShelfTime)
                     .Select(a => new StockDto()
                     {
                         MaterialCode = a.MaterialCode,
@@ -150,7 +153,9 @@ namespace DF.Web.Areas.BussinessApi.Controllers
                         ContainerCode = a.ContainerCode,
                         Price = a.Price,
                         Use = a.Use,
-                        Quantity= stockquery.Where(q=>q.MaterialCode==a.MaterialCode&&q.WareHouseCode==a.WareHouseCode && q.ContainerCode == a.ContainerCode).Sum(x=>x.Quantity),
+                        LocationCode = a.LocationCode,
+                        ShelfTime = a.ShelfTime,
+                        Quantity = stockquery.Where(q=>q.MaterialCode==a.MaterialCode&&q.WareHouseCode==a.WareHouseCode && q.ContainerCode == a.ContainerCode).Sum(x=>x.Quantity),
                         LockedQuantity= stockquery.Where(q => q.MaterialCode == a.MaterialCode && q.WareHouseCode == a.WareHouseCode && q.ContainerCode == a.ContainerCode).Sum(x => x.LockedQuantity),
                     });
 
@@ -776,10 +781,10 @@ namespace DF.Web.Areas.BussinessApi.Controllers
                 {"WareHouseCode","仓库编码"},
                 {"WareHouseName","仓库名称"},
                 {"ContainerCode","货柜编码"},
-                {"LocationCode","库位编码"},
+                {"LocationCode","储位编码"},
                 {"MaterialCode","物料编码"},
                 {"MaterialName","物料名称"},
-                 {"Price","价格"},
+                {"Price","价格"},
                 {"Use","用途"},
                 {"MaterialLabel","物料条码"},
                 {"Quantity","总数量"},
@@ -788,10 +793,10 @@ namespace DF.Web.Areas.BussinessApi.Controllers
                 {"SupplierName","供应商名称"},
                 {"SupplierCode","供应商编码"},
                 {"BatchCode","批次"},
-                {"ManufactureDate","生产日期"},
+                {"ManufactureDate","入库时间"},
             };
 
-            var fileName = "物料条码库存信息.xlsx"; //string.Format(@"库位信息{0}.xlsx", string.Format("{0:G}", DateTime.Now));
+            var fileName = "单盒物料库存信息.xlsx"; //string.Format(@"库位信息{0}.xlsx", string.Format("{0:G}", DateTime.Now));
             var excelFile = Bussiness.Common.ExcelHelper.ListToExecl(list, fileName, divFields);
             MemoryStream ms = new MemoryStream();
             excelFile.Write(ms);
@@ -809,7 +814,7 @@ namespace DF.Web.Areas.BussinessApi.Controllers
                 result.Content = new StreamContent(stream);
                 result.Content.Headers.ContentType = new MediaTypeHeaderValue("application/vnd.ms-excel");
                 result.Content.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment");
-                result.Content.Headers.ContentDisposition.FileName = $"物料条码库存信息{System.DateTime.Now.ToString("yyyyMMdd")}.xls";
+                result.Content.Headers.ContentDisposition.FileName = $"单盒物料库存信息{System.DateTime.Now.ToString("yyyyMMdd")}.xls";
                 return result;
             }
             catch
@@ -1067,6 +1072,17 @@ namespace DF.Web.Areas.BussinessApi.Controllers
                 pageCondition.FilterRuleCondition.Remove(filterRule);
             }
             filterRule = pageCondition.FilterRuleCondition.Find(a => a.Field == "ContainerCode");
+
+
+            //if (filterRule != null)
+            //{
+            //    string value = filterRule.Value.ToString();
+            //    query = query.Where(p => p.SupplierCode.Contains(value) || p.SupplierName.Contains(value));
+            //    pageCondition.FilterRuleCondition.Remove(filterRule);
+            //}
+            //filterRule = pageCondition.FilterRuleCondition.Find(a => a.Field == "LocationCode");
+
+
             if (filterRule != null)
             {
                 string value = filterRule.Value.ToString();
@@ -1094,7 +1110,10 @@ namespace DF.Web.Areas.BussinessApi.Controllers
                 .AndBy(p => p.WareHouseCode)
                 .AndBy(p => p.WareHouseName)
                 .AndBy(p => p.MaterialUnit)
-                .AndBy(p=>p.Price).AndBy(p=>p.Use)
+                .AndBy(p => p.Price)
+                .AndBy(p => p.Use)
+                .AndBy(p => p.LocationCode)
+                .AndBy(p => p.ShelfTime)
                 .Select(a => new StockDto()
                 {
                     MaterialCode = a.MaterialCode,
@@ -1104,6 +1123,8 @@ namespace DF.Web.Areas.BussinessApi.Controllers
                     MaterialUnit = a.MaterialUnit,
                     Price = a.Price,
                     Use = a.Use,
+                    LocationCode = a.LocationCode,
+                    ShelfTime = a.ShelfTime,
                     Quantity = stockquery.Where(q => q.MaterialCode == a.MaterialCode && q.WareHouseCode == a.WareHouseCode).Sum(x => x.Quantity),
                     LockedQuantity = stockquery.Where(q => q.MaterialCode == a.MaterialCode && q.WareHouseCode == a.WareHouseCode).Sum(x => x.LockedQuantity),
                 }).ToList();
@@ -1113,11 +1134,13 @@ namespace DF.Web.Areas.BussinessApi.Controllers
                 {"WareHouseName","仓库名称"},
                 {"MaterialCode","物料编码"},
                 {"MaterialName","物料名称"},
-                   {"Price","价格"},
-                      {"Use","用途"},
+                {"Price","价格"},
+                {"Use","用途"},
+                {"LocationCode","上架储位"},
                 {"Quantity","总数量"},
                 {"LockedQuantity","锁定数量"},
                 {"MaterialUnit","单位"},
+                {"ShelfTime","入库时间"},
             };
 
             var fileName = "物料库存信息.xlsx"; //string.Format(@"库位信息{0}.xlsx", string.Format("{0:G}", DateTime.Now));

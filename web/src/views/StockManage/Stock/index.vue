@@ -549,7 +549,7 @@ export default {
             });
             let link = document.createElement('a');
             link.href = URL.createObjectURL(blob);
-            link.setAttribute('download', '物料条码库存信息.xls');
+            link.setAttribute('download', '单盒物料库存信息.xls');
             link.click();
             link = null;
             this.$message.success('导出成功');
@@ -584,7 +584,7 @@ export default {
               });
               let link = document.createElement('a');
               link.href = URL.createObjectURL(blob);
-              link.setAttribute('download', '物料条码库存信息.xls');
+              link.setAttribute('download', '单盒物料库存信息.xls');
               link.click();
               link = null;
               this.$message.success('导出成功');
@@ -612,7 +612,7 @@ export default {
             });
             let link = document.createElement('a');
             link.href = URL.createObjectURL(blob);
-            link.setAttribute('download', '物料条码库存信息.xls');
+            link.setAttribute('download', '单盒物料库存信息.xls');
             link.click();
             link = null;
             this.$message.success('导出成功');

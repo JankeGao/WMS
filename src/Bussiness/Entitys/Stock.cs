@@ -287,7 +287,6 @@ namespace Bussiness.Entitys
 
         public decimal? NotShelfQuantity { get; set; }
 
-
     }
 
 }

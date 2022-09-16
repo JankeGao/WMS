@@ -106,6 +106,11 @@
               <span>{{ scope.row.Unit }}</span>
             </template>
           </el-table-column>
+          <el-table-column :label="'价格'" width="65" show-overflow-tooltip align="center">
+            <template slot-scope="scope">
+              <span>{{ scope.row.Remark2 }}</span>
+            </template>
+          </el-table-column>
           <el-table-column :label="'物料编码'" width="145" align="center" show-overflow-tooltip>
             <template slot-scope="scope">
               <span>{{ scope.row.MaterialCode }}</span>
