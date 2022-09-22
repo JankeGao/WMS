@@ -870,6 +870,214 @@ namespace PLCServer
                                 returnStr += "222;";
                             }
                         }
+                        var M1200Result = melsec_net.ReadBool("M1200");
+                        if (M1200Result.IsSuccess)
+                        {
+                            if (M1200Result.Content)
+                            {
+                                returnStr += "1200;";
+                            }
+                        }
+                        var M1201Result = melsec_net.ReadBool("M1201");
+                        if (M1201Result.IsSuccess)
+                        {
+                            if (M1201Result.Content)
+                            {
+                                returnStr += "1201;";
+                            }
+                        }
+                        var M1202Result = melsec_net.ReadBool("M1202");
+                        if (M1202Result.IsSuccess)
+                        {
+                            if (M1202Result.Content)
+                            {
+                                returnStr += "1202;";
+                            }
+                        }
+                        var M1203Result = melsec_net.ReadBool("M1203");
+                        if (M1203Result.IsSuccess)
+                        {
+                            if (M1203Result.Content)
+                            {
+                                returnStr += "1203;";
+                            }
+                        }
+                        var M1204Result = melsec_net.ReadBool("M1204");
+                        if (M1204Result.IsSuccess)
+                        {
+                            if (M1204Result.Content)
+                            {
+                                returnStr += "1204;";
+                            }
+                        }
+                        var M1205Result = melsec_net.ReadBool("M1205");
+                        if (M1205Result.IsSuccess)
+                        {
+                            if (M1205Result.Content)
+                            {
+                                returnStr += "1205;";
+                            }
+                        }
+                        var M1206Result = melsec_net.ReadBool("M1206");
+                        if (M1206Result.IsSuccess)
+                        {
+                            if (M1206Result.Content)
+                            {
+                                returnStr += "1206;";
+                            }
+                        }
+                        var M1207Result = melsec_net.ReadBool("M1207");
+                        if (M1207Result.IsSuccess)
+                        {
+                            if (M1207Result.Content)
+                            {
+                                returnStr += "1207;";
+                            }
+                        }
+                        var M1208Result = melsec_net.ReadBool("M1208");
+                        if (M1208Result.IsSuccess)
+                        {
+                            if (M1208Result.Content)
+                            {
+                                returnStr += "1208;";
+                            }
+                        }
+                        var M1209Result = melsec_net.ReadBool("M1209");
+                        if (M1209Result.IsSuccess)
+                        {
+                            if (M1209Result.Content)
+                            {
+                                returnStr += "1209;";
+                            }
+                        }
+                        var M1210Result = melsec_net.ReadBool("M1210");
+                        if (M1210Result.IsSuccess)
+                        {
+                            if (M1210Result.Content)
+                            {
+                                returnStr += "1210;";
+                            }
+                        }
+                        var M1211Result = melsec_net.ReadBool("M1211");
+                        if (M1211Result.IsSuccess)
+                        {
+                            if (M1211Result.Content)
+                            {
+                                returnStr += "1211;";
+                            }
+                        }
+                        var M1212Result = melsec_net.ReadBool("M1212");
+                        if (M1212Result.IsSuccess)
+                        {
+                            if (M1212Result.Content)
+                            {
+                                returnStr += "1212;";
+                            }
+                        }
+                        var M1213Result = melsec_net.ReadBool("M1213");
+                        if (M1213Result.IsSuccess)
+                        {
+                            if (M1213Result.Content)
+                            {
+                                returnStr += "1213;";
+                            }
+                        }
+                        var M1214Result = melsec_net.ReadBool("M1214");
+                        if (M1214Result.IsSuccess)
+                        {
+                            if (M1214Result.Content)
+                            {
+                                returnStr += "1214;";
+                            }
+                        }
+                        var M1215Result = melsec_net.ReadBool("M1215");
+                        if (M1215Result.IsSuccess)
+                        {
+                            if (M1215Result.Content)
+                            {
+                                returnStr += "1215;";
+                            }
+                        }
+                        var M1216Result = melsec_net.ReadBool("M1216");
+                        if (M1216Result.IsSuccess)
+                        {
+                            if (M1216Result.Content)
+                            {
+                                returnStr += "1216;";
+                            }
+                        }
+                        var M1217Result = melsec_net.ReadBool("M1217");
+                        if (M1217Result.IsSuccess)
+                        {
+                            if (M1217Result.Content)
+                            {
+                                returnStr += "1217;";
+                            }
+                        }
+                        var M1218Result = melsec_net.ReadBool("M1218");
+                        if (M1218Result.IsSuccess)
+                        {
+                            if (M1218Result.Content)
+                            {
+                                returnStr += "1218;";
+                            }
+                        }
+                        var M1219Result = melsec_net.ReadBool("M1219");
+                        if (M1219Result.IsSuccess)
+                        {
+                            if (M1219Result.Content)
+                            {
+                                returnStr += "1219;";
+                            }
+                        }
+                        var M1220Result = melsec_net.ReadBool("M1220");
+                        if (M1220Result.IsSuccess)
+                        {
+                            if (M1220Result.Content)
+                            {
+                                returnStr += "1220;";
+                            }
+                        }
+                        var M1221Result = melsec_net.ReadBool("M1221");
+                        if (M1221Result.IsSuccess)
+                        {
+                            if (M1221Result.Content)
+                            {
+                                returnStr += "1221;";
+                            }
+                        }
+                        var M1222Result = melsec_net.ReadBool("M1222");
+                        if (M1222Result.IsSuccess)
+                        {
+                            if (M1222Result.Content)
+                            {
+                                returnStr += "1222;";
+                            }
+                        }
+                        var M1223Result = melsec_net.ReadBool("M1223");
+                        if (M1223Result.IsSuccess)
+                        {
+                            if (M1223Result.Content)
+                            {
+                                returnStr += "1223;";
+                            }
+                        }
+                        var M1224Result = melsec_net.ReadBool("M1224");
+                        if (M1224Result.IsSuccess)
+                        {
+                            if (M1224Result.Content)
+                            {
+                                returnStr += "1224;";
+                            }
+                        }
+                        var M1225Result = melsec_net.ReadBool("M1225");
+                        if (M1225Result.IsSuccess)
+                        {
+                            if (M1225Result.Content)
+                            {
+                                returnStr += "1225;";
+                            }
+                        }
 
                         if (!string.IsNullOrEmpty(returnStr))
                         {
